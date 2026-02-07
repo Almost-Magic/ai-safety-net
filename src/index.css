@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Safety Net Design System
+ * Warm, organic, human-crafted aesthetic
+ * Cream tones, soft shadows, generous curves
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Core - Warm cream and charcoal */
+    --background: 40 33% 97%;
+    --foreground: 30 10% 20%;
+    
+    /* Cards - Soft warm white */
+    --card: 45 40% 99%;
+    --card-foreground: 30 10% 20%;
+    
+    /* Popovers */
+    --popover: 45 40% 99%;
+    --popover-foreground: 30 10% 20%;
+    
+    /* Primary - Earthy forest green */
+    --primary: 160 30% 35%;
+    --primary-foreground: 45 40% 98%;
+    
+    /* Secondary - Warm sand */
+    --secondary: 38 35% 92%;
+    --secondary-foreground: 30 15% 25%;
+    
+    /* Muted - Soft taupe */
+    --muted: 35 20% 90%;
+    --muted-foreground: 30 10% 45%;
+    
+    /* Accent - Terracotta warmth */
+    --accent: 18 70% 55%;
+    --accent-foreground: 45 40% 98%;
+    
+    /* Destructive */
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders - Soft warm gray */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 160 30% 35%;
+    
+    /* Radius - More generous */
+    --radius: 1rem;
+    
+    /* Custom design tokens */
+    --gradient-hero: linear-gradient(145deg, hsl(160 28% 30%) 0%, hsl(170 25% 28%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(40 33% 97%) 0%, hsl(38 30% 95%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(45 40% 99%) 0%, hsl(40 35% 97%) 100%);
+    
+    /* Shadows - Softer, warmer */
+    --shadow-sm: 0 1px 3px 0 hsl(30 20% 20% / 0.04);
+    --shadow-md: 0 4px 12px -2px hsl(30 20% 20% / 0.08), 0 2px 6px -2px hsl(30 20% 20% / 0.04);
+    --shadow-lg: 0 12px 24px -4px hsl(30 20% 20% / 0.1), 0 4px 8px -4px hsl(30 20% 20% / 0.06);
+    --shadow-xl: 0 20px 40px -8px hsl(30 20% 20% / 0.12), 0 8px 16px -8px hsl(30 20% 20% / 0.06);
+    --shadow-glow: 0 0 50px -15px hsl(160 30% 35% / 0.25);
+    
+    /* Success - Sage green */
+    --success: 145 40% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning - Golden amber */
+    --warning: 42 90% 55%;
+    --warning-foreground: 30 15% 20%;
+    
+    /* Navy - Deep charcoal for contrast sections */
+    --navy: 30 15% 18%;
+    --navy-foreground: 40 30% 95%;
+    
+    /* Trust - Soft teal */
+    --trust: 165 35% 42%;
+    
+    /* Sidebar */
+    --sidebar-background: 40 30% 96%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 160 30% 35%;
+    --sidebar-primary-foreground: 45 40% 98%;
+    --sidebar-accent: 35 20% 90%;
+    --sidebar-accent-foreground: 30 10% 20%;
+    --sidebar-border: 35 20% 85%;
+    --sidebar-ring: 160 30% 35%;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 40 25% 90%;
+    
+    --card: 30 15% 12%;
+    --card-foreground: 40 25% 90%;
+    
+    --popover: 30 15% 12%;
+    --popover-foreground: 40 25% 90%;
+    
+    --primary: 160 35% 50%;
+    --primary-foreground: 30 15% 10%;
+    
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 20% 85%;
+    
+    --muted: 30 15% 18%;
+    --muted-foreground: 35 15% 55%;
+    
+    --accent: 18 65% 55%;
+    --accent-foreground: 40 30% 95%;
+    
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 30 15% 22%;
+    --input: 30 15% 22%;
+    --ring: 160 35% 50%;
+    
+    --gradient-hero: linear-gradient(145deg, hsl(160 28% 25%) 0%, hsl(170 25% 22%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(30 15% 10%) 0%, hsl(30 15% 12%) 100%);
+    
+    --success: 145 40% 50%;
+    --navy: 30 10% 25%;
+    --navy-foreground: 40 25% 90%;
+    --trust: 165 35% 50%;
+    
+    --sidebar-background: 30 15% 12%;
+    --sidebar-foreground: 40 20% 85%;
+    --sidebar-primary: 160 35% 50%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 30 15% 22%;
+    --sidebar-ring: 160 35% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Hero button variant - warm and inviting */
+  .btn-hero {
+    @apply inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-2xl text-base font-semibold
+           bg-accent text-accent-foreground px-8 py-4
+           hover:bg-accent/90 transition-all duration-300 ease-out
+           shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  /* Secondary/outline hero button */
+  .btn-hero-outline {
+    @apply inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-2xl text-base font-medium
+           border-2 border-current text-primary-foreground/90 px-8 py-4
+           hover:bg-primary-foreground/10 transition-all duration-300 ease-out;
+  }
+  
+  /* Trust badge styling */
+  .trust-badge {
+    @apply inline-flex items-center gap-2.5 text-sm font-medium;
+  }
+  
+  /* Section styling */
+  .section-container {
+    @apply max-w-5xl mx-auto px-5 sm:px-8 lg:px-10;
+  }
+  
+  /* Card with organic styling */
+  .card-organic {
+    @apply bg-card rounded-3xl border border-border/60;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Progress bar - softer */
+  .progress-bar {
+    @apply h-2.5 rounded-full bg-muted overflow-hidden;
+  }
+  
+  .progress-bar-fill {
+    @apply h-full rounded-full bg-primary transition-all duration-500 ease-out;
+  }
+  
+  /* Question card - warm and spacious */
+  .question-card {
+    @apply bg-card rounded-3xl border border-border/60 p-8 md:p-12;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Feature card - organic feel */
+  .feature-card {
+    @apply p-7 rounded-3xl bg-card border border-border/50 hover:border-border transition-all duration-300 ease-out;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .feature-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  /* Soft shadow utilities */
+  .shadow-soft-sm { box-shadow: var(--shadow-sm); }
+  .shadow-soft-md { box-shadow: var(--shadow-md); }
+  .shadow-soft-lg { box-shadow: var(--shadow-lg); }
+  .shadow-soft-xl { box-shadow: var(--shadow-xl); }
+  
+  /* Animated underline */
+  .link-underline {
+    @apply relative;
+  }
+  
+  .link-underline::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 ease-out;
+    content: '';
+  }
+  
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+  
+  /* Pill/tag styling */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-medium;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
