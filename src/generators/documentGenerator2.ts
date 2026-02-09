@@ -796,22 +796,22 @@ Artificial Intelligence (AI) refers to computer systems that can perform tasks t
 
 ### 1.3 What AI Can Do Well
 
-✅ Draft and edit text
-✅ Summarize long documents
-✅ Translate languages
-✅ Answer questions about general topics
-✅ Generate ideas and brainstorm
-✅ Write code
-✅ Explain concepts
+✓ Draft and edit text
+✓ Summarize long documents
+✓ Translate languages
+✓ Answer questions about general topics
+✓ Generate ideas and brainstorm
+✓ Write code
+✓ Explain concepts
 
 ### 1.4 What AI Cannot Do Well
 
-❌ Guarantee accuracy — it makes confident-sounding errors
-❌ Access real-time information (without specific tools)
-❌ Truly understand context or nuance
-❌ Replace professional judgment
-❌ Keep secrets (your inputs may be stored/used)
-❌ Consistently follow complex rules
+✗ Guarantee accuracy — it makes confident-sounding errors
+✗ Access real-time information (without specific tools)
+✗ Truly understand context or nuance
+✗ Replace professional judgment
+✗ Keep secrets (your inputs may be stored/used)
+✗ Consistently follow complex rules
 
 ---
 
@@ -962,13 +962,13 @@ ${r.requirements.map(req => `- ${req}`).join('\n')}`).join('\n')}
 
 | Situation | AI OK? |
 |-----------|--------|
-| Brainstorming ideas | ✅ Yes |
-| Drafting general content | ✅ Yes |
-| Entering client names | ❌ No |
-| Entering financial data | ❌ No |
-| Final fact without verification | ❌ No |
-| Grammar and style help | ✅ Yes |
-| Replacing your professional judgment | ❌ No |
+| Brainstorming ideas | ✓ Yes |
+| Drafting general content | ✓ Yes |
+| Entering client names | ✗ No |
+| Entering financial data | ✗ No |
+| Final fact without verification | ✗ No |
+| Grammar and style help | ✓ Yes |
+| Replacing your professional judgment | ✗ No |
 
 ### Before Using AI, Ask:
 
@@ -1105,12 +1105,12 @@ The quality of AI output depends significantly on the quality of your input (pro
 
 ### DO NOT Include:
 
-❌ Client names or identifying details
-❌ Personal information (addresses, phone numbers, emails)
-❌ Financial account numbers
-❌ TFNs, ABNs, Medicare numbers
-❌ Health information with identifiers
-❌ Internal strategic information
+✗ Client names or identifying details
+✗ Personal information (addresses, phone numbers, emails)
+✗ Financial account numbers
+✗ TFNs, ABNs, Medicare numbers
+✗ Health information with identifiers
+✗ Internal strategic information
 
 ### Safe Alternatives:
 
@@ -1356,11 +1356,11 @@ ${dataContext.dataTypes.includes('legal_privileged') ? '   - Privileged informat
 
 | Tool | Data Safety | Integration | Cost-Effective for ${businessProfile.sizeDescription} |
 |------|-------------|-------------|----------------------|
-| ChatGPT Enterprise | ⭐⭐⭐ | ⭐⭐ | ${businessProfile.size === 'large' || businessProfile.size === 'larger' ? '⭐⭐⭐' : '⭐'} |
-| ChatGPT Team | ⭐⭐ | ⭐⭐ | ${businessProfile.size === 'small' || businessProfile.size === 'medium' ? '⭐⭐⭐' : '⭐⭐'} |
-| Claude Pro | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
-| M365 Copilot | ⭐⭐⭐ | ⭐⭐⭐ (if M365) | ${businessProfile.size === 'medium' || businessProfile.size === 'larger' || businessProfile.size === 'large' ? '⭐⭐⭐' : '⭐⭐'} |
-| Free tiers | ⭐ | ⭐ | ⭐⭐⭐ (but limited use) |
+| ChatGPT Enterprise | [*][*][*] | [*][*] | ${businessProfile.size === 'large' || businessProfile.size === 'larger' ? '[*][*][*]' : '[*]'} |
+| ChatGPT Team | [*][*] | [*][*] | ${businessProfile.size === 'small' || businessProfile.size === 'medium' ? '[*][*][*]' : '[*][*]'} |
+| Claude Pro | [*][*][*] | [*][*] | [*][*][*] |
+| M365 Copilot | [*][*][*] | [*][*][*] (if M365) | ${businessProfile.size === 'medium' || businessProfile.size === 'larger' || businessProfile.size === 'large' ? '[*][*][*]' : '[*][*]'} |
+| Free tiers | [*] | [*] | [*][*][*] (but limited use) |
 
 ---
 
@@ -1386,9 +1386,9 @@ ${dataContext.dataTypes.includes('legal_privileged') ? '   - Privileged informat
 
 | Tool | Free | Individual | Team | Enterprise |
 |------|------|------------|------|------------|
-| ChatGPT | ✅ | $20 (Plus) | $30 | Custom |
-| Claude | ✅ | $20 (Pro) | Custom | Custom |
-| Gemini | ✅ | $27 (Advanced) | Via Workspace | Custom |
+| ChatGPT | ✓ | $20 (Plus) | $30 | Custom |
+| Claude | ✓ | $20 (Pro) | Custom | Custom |
+| Gemini | ✓ | $27 (Advanced) | Via Workspace | Custom |
 | M365 Copilot | N/A | N/A | N/A | $30/user |
 | GitHub Copilot | N/A | $10 | $19 | $39 |
 
@@ -1656,12 +1656,12 @@ ${industry.code === 'professional_legal' ? `
 
 ### Signs of AI Hallucination
 
-⚠️ Very specific details (names, dates, numbers) that seem too convenient
-⚠️ Citations with unusual formatting
-⚠️ Statistics without clear sources
-⚠️ Claims that don't match your knowledge of the topic
-⚠️ Overly confident statements about uncertain topics
-⚠️ Information that contradicts known facts
+⚠ Very specific details (names, dates, numbers) that seem too convenient
+⚠ Citations with unusual formatting
+⚠ Statistics without clear sources
+⚠ Claims that don't match your knowledge of the topic
+⚠ Overly confident statements about uncertain topics
+⚠ Information that contradicts known facts
 
 ### Common AI Errors
 
@@ -3000,7 +3000,7 @@ Track your AI governance implementation progress and demonstrate compliance over
 
 | Milestone | Target Date | Actual Date | Status |
 |-----------|-------------|-------------|--------|
-| Governance pack downloaded | | ${formatDate()} | ✅ Complete |
+| Governance pack downloaded | | ${formatDate()} | ✓ Complete |
 | Policies adopted | | | ☐ |
 | ${businessProfile.staffTerm.charAt(0).toUpperCase() + businessProfile.staffTerm.slice(1)} trained | | | ☐ |
 | Vendors assessed | | | ☐ |

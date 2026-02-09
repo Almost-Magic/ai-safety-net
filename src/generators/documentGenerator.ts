@@ -120,7 +120,7 @@ As we serve clients in regulated industries, additional requirements apply:
 
 - **Check client agreements** before using AI with any client data
 - **Obtain explicit consent** from clients before AI processing of their information
-- **Maintain confidentiality** â€” client data must never be entered into AI tools without approval
+- **Maintain confidentiality** — client data must never be entered into AI tools without approval
 - **Document AI usage** when it affects client deliverables
 - **Report immediately** any AI-related incidents involving client data`;
   }
@@ -147,7 +147,7 @@ As we process data on behalf of other businesses:
   } else if (businessProfile.size === 'micro') {
     governanceStructure = `With a small team, discuss AI usage openly. Designate one person (even yourself) as the go-to for AI questions.`;
   } else if (businessProfile.size === 'small') {
-    governanceStructure = `Designate an AI governance owner â€” this doesn't need to be a separate role, but someone needs clear responsibility for AI oversight.`;
+    governanceStructure = `Designate an AI governance owner — this doesn't need to be a separate role, but someone needs clear responsibility for AI oversight.`;
   } else {
     governanceStructure = `Establish an AI governance lead or committee with clear responsibilities for policy maintenance, incident response, and training coordination.`;
   }
@@ -194,7 +194,7 @@ This policy applies to all ${businessProfile.staffTerm} of ${businessProfile.nam
 **Sensitive Data:** Information requiring special protection, including:
 ${dataContext.dataTypes.map(t => `- ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n')}
 
-**AI Governance Owner:** The person responsible for this policy â€” currently the ${getGovernanceRole(businessProfile.size)}.
+**AI Governance Owner:** The person responsible for this policy — currently the ${getGovernanceRole(businessProfile.size)}.
 
 ## 4. Governance
 
@@ -242,7 +242,7 @@ ${aiContext.tools.length > 0 ? `### Currently Approved Tools
 
 The following AI tools have been assessed and approved for use at ${businessProfile.name}:
 
-${aiContext.tools.map(t => `- **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** â€” [Add permitted use cases]`).join('\n')}
+${aiContext.tools.map(t => `- **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** — [Add permitted use cases]`).join('\n')}
 
 ### Tool Approval Process
 
@@ -274,10 +274,10 @@ When using AI tools:
 
 | Classification | Can Use in AI? | Examples |
 |----------------|----------------|----------|
-| **Public** | âœ… Yes | Published content, marketing materials, public website info |
-| **Internal** | âš ï¸ With caution | Internal processes, general business information (no names/details) |
-| **Confidential** | âŒ No (without approval) | Client data, financial details, ${dataContext.dataTypes.includes('health') ? 'patient records, ' : ''}employee information |
-| **Restricted** | âŒ Never | ${dataContext.dataTypes.includes('health') ? 'Health records, ' : ''}${dataContext.dataTypes.includes('legal_privileged') ? 'Privileged legal information, ' : ''}${dataContext.dataTypes.includes('children') ? 'Children\'s data, ' : ''}Authentication credentials |
+| **Public** | ✓ Yes | Published content, marketing materials, public website info |
+| **Internal** | ⚠ With caution | Internal processes, general business information (no names/details) |
+| **Confidential** | ✗ No (without approval) | Client data, financial details, ${dataContext.dataTypes.includes('health') ? 'patient records, ' : ''}employee information |
+| **Restricted** | ✗ Never | ${dataContext.dataTypes.includes('health') ? 'Health records, ' : ''}${dataContext.dataTypes.includes('legal_privileged') ? 'Privileged legal information, ' : ''}${dataContext.dataTypes.includes('children') ? 'Children\'s data, ' : ''}Authentication credentials |
 
 ### 7.3 Specific Data Restrictions
 
@@ -301,10 +301,10 @@ ${dataContext.dataTypes.filter(t => t !== 'public').map(t => {
 
 AI-generated content must be:
 
-1. **Verified for accuracy** â€” AI makes mistakes and can "hallucinate" false information
-2. **Checked against authoritative sources** â€” especially for facts, figures, citations, and technical information
-3. **Reviewed for appropriateness** â€” ensure tone, content, and messaging align with ${businessProfile.name}'s standards
-4. **Approved before external use** â€” ${businessProfile.size === 'solo' ? 'take time to review before sending/publishing' : 'have reviewed by appropriate person'}
+1. **Verified for accuracy** — AI makes mistakes and can "hallucinate" false information
+2. **Checked against authoritative sources** — especially for facts, figures, citations, and technical information
+3. **Reviewed for appropriateness** — ensure tone, content, and messaging align with ${businessProfile.name}'s standards
+4. **Approved before external use** — ${businessProfile.size === 'solo' ? 'take time to review before sending/publishing' : 'have reviewed by appropriate person'}
 
 ### 8.1 Citation and Verification
 
@@ -351,7 +351,7 @@ If you experience or become aware of an AI-related incident:
 1. **Stop** using the tool immediately if the incident is ongoing
 2. **Report** to the ${getGovernanceRole(businessProfile.size)} within 24 hours
 3. **Document** what happened, when, and what data/content was involved
-4. **Preserve evidence** â€” screenshots, logs, or records of the incident
+4. **Preserve evidence** — screenshots, logs, or records of the incident
 5. **Do not** attempt to cover up, minimize, or "fix" the incident without reporting
 
 ### 10.3 Response Commitment
@@ -465,10 +465,10 @@ ${dataContext.dataTypes.map(t => `- ${t.replace(/_/g, ' ').replace(/\b\w/g, c =>
 
 | Level | Description | AI Tool Permission |
 |-------|-------------|-------------------|
-| **PUBLIC** | Information available to anyone | âœ… May use freely |
-| **INTERNAL** | Business information not for external sharing | âš ï¸ Use with caution, remove identifying details |
-| **CONFIDENTIAL** | Sensitive business/client data | âŒ Requires explicit approval |
-| **RESTRICTED** | Highly sensitive, legally protected | ðŸš« Never use in AI tools |
+| **PUBLIC** | Information available to anyone | ✓ May use freely |
+| **INTERNAL** | Business information not for external sharing | ⚠ Use with caution, remove identifying details |
+| **CONFIDENTIAL** | Sensitive business/client data | ✗ Requires explicit approval |
+| **RESTRICTED** | Highly sensitive, legally protected | ✗ Never use in AI tools |
 
 ### 3.2 Data Type Classifications
 
@@ -507,11 +507,11 @@ Before entering any data into an AI tool, ask:
 When using AI for tasks involving sensitive information:
 
 1. **Remove all identifiers:**
-   - Names â†’ "Client A", "Patient 1", "Employee X"
-   - Specific dates â†’ "in Q1 2024", "last month"
-   - Locations â†’ "a major Australian city", "regional area"
-   - Account/reference numbers â†’ Remove entirely or use "XXX"
-   - Unique circumstances â†’ Generalise to avoid identification
+   - Names → "Client A", "Patient 1", "Employee X"
+   - Specific dates → "in Q1 2024", "last month"
+   - Locations → "a major Australian city", "regional area"
+   - Account/reference numbers → Remove entirely or use "XXX"
+   - Unique circumstances → Generalise to avoid identification
 
 2. **Verify anonymisation:**
    - Could someone identify the individual from context?
@@ -597,11 +597,11 @@ In the context of AI:
 
 ### 7.2 Immediate Response
 
-1. **Stop** â€” Cease using the AI tool immediately
-2. **Assess** â€” What data was involved? How sensitive?
-3. **Report** â€” Notify ${getGovernanceRole(businessProfile.size)} within 24 hours
-4. **Document** â€” Record exactly what happened
-5. **Preserve** â€” Keep screenshots and evidence
+1. **Stop** — Cease using the AI tool immediately
+2. **Assess** — What data was involved? How sensitive?
+3. **Report** — Notify ${getGovernanceRole(businessProfile.size)} within 24 hours
+4. **Document** — Record exactly what happened
+5. **Preserve** — Keep screenshots and evidence
 
 ### 7.3 Notification Requirements
 
@@ -711,17 +711,17 @@ For each tool, answer:
 
 ### 4.2 Risk Categorisation
 
-**LOW RISK** â€” May proceed with documentation
+**LOW RISK** — May proceed with documentation
 - Public data only
 - Reputable provider with clear terms
 - No client or sensitive business data
 
-**MEDIUM RISK** â€” Requires formal assessment
+**MEDIUM RISK** — Requires formal assessment
 - Internal business data
 - Could be misconfigured to expose data
 - New or less-established provider
 
-**HIGH RISK** â€” Requires thorough review and approval
+**HIGH RISK** — Requires thorough review and approval
 - Client or customer data
 - Sensitive business information
 - Regulated industry applications
@@ -769,7 +769,7 @@ ${aiContext.tools.map(t => `| ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toU
 ` : `
 | Tool | Approved Use Cases | Restrictions | Approved Date |
 |------|-------------------|--------------|---------------|
-| [No tools currently approved] | â€” | â€” | â€” |
+| [No tools currently approved] | — | — | — |
 `}
 
 ### Prohibited Tools
@@ -852,7 +852,7 @@ Approval may be revoked if:
 
 **Questions Answered:** (Attach assessment)
 
-**Decision:** â˜ Approved â˜ Approved with conditions â˜ Denied
+**Decision:** ☐ Approved ☐ Approved with conditions ☐ Denied
 
 **Conditions/Reason:**
 _______________
@@ -987,11 +987,11 @@ ${industry.redFlags.slice(0, 3).map(r => `- ${r.replace('NEVER ', '')}`).join('\
 
 When facing an ethical dilemma involving AI:
 
-1. **Pause** â€” Don't proceed if uncertain
-2. **Consider** â€” Who could be affected? How?
-3. **Consult** â€” ${businessProfile.size === 'solo' ? 'Seek external advice if needed' : 'Discuss with colleagues or leadership'}
-4. **Document** â€” Record your reasoning
-5. **Decide** â€” Choose the path that best protects people
+1. **Pause** — Don't proceed if uncertain
+2. **Consider** — Who could be affected? How?
+3. **Consult** — ${businessProfile.size === 'solo' ? 'Seek external advice if needed' : 'Discuss with colleagues or leadership'}
+4. **Document** — Record your reasoning
+5. **Decide** — Choose the path that best protects people
 
 ## 5. Accountability
 
@@ -1080,7 +1080,7 @@ This document provides practical standards for day-to-day AI use at ${businessPr
 
 ---
 
-## âœ… APPROVED USES
+## ✓ APPROVED USES
 
 ### Content Creation
 - Drafting emails, documents, and reports (always review before sending)
@@ -1106,65 +1106,65 @@ ${industry.permittedUses.map(u => `- ${u}`).join('\n')}
 
 ---
 
-## âš ï¸ USE WITH CAUTION
+## ⚠ USE WITH CAUTION
 
 These uses require extra care:
 
 ### Client Communications
-- âœ“ Drafting general communications
-- âœ“ Creating templates
-- âš ï¸ Never include client-specific details in prompts
-- âš ï¸ Always review and personalize before sending
+- ✓ Drafting general communications
+- ✓ Creating templates
+- ⚠ Never include client-specific details in prompts
+- ⚠ Always review and personalize before sending
 
 ### Financial or Technical Content
-- âœ“ General explanations and research
-- âš ï¸ Never use AI outputs as final calculations
-- âš ï¸ Always verify figures and technical details
-- âš ï¸ Cross-reference with authoritative sources
+- ✓ General explanations and research
+- ⚠ Never use AI outputs as final calculations
+- ⚠ Always verify figures and technical details
+- ⚠ Cross-reference with authoritative sources
 
 ### External-Facing Content
-- âœ“ Marketing and social media content
-- âš ï¸ Must be reviewed before publication
-- âš ï¸ Ensure accuracy of all claims
-- âš ï¸ Check for appropriate tone and brand alignment
+- ✓ Marketing and social media content
+- ⚠ Must be reviewed before publication
+- ⚠ Ensure accuracy of all claims
+- ⚠ Check for appropriate tone and brand alignment
 
 ---
 
-## âŒ PROHIBITED USES
+## ✗ PROHIBITED USES
 
 ### Never Do These:
 
 **Data Prohibitions**
-- âŒ Enter client names or identifying information
-- âŒ Input personal data (addresses, phone numbers, emails of individuals)
-- âŒ Share financial details (TFNs, bank accounts, credit cards)
-${dataContext.dataTypes.includes('health') ? '- âŒ Input any health or medical information' : ''}
-${dataContext.dataTypes.includes('children') ? '- âŒ Enter any information about children' : ''}
-${dataContext.dataTypes.includes('legal_privileged') ? '- âŒ Share legal privileged information or case details' : ''}
-- âŒ Upload confidential documents
+- ✗ Enter client names or identifying information
+- ✗ Input personal data (addresses, phone numbers, emails of individuals)
+- ✗ Share financial details (TFNs, bank accounts, credit cards)
+${dataContext.dataTypes.includes('health') ? '- ✗ Input any health or medical information' : ''}
+${dataContext.dataTypes.includes('children') ? '- ✗ Enter any information about children' : ''}
+${dataContext.dataTypes.includes('legal_privileged') ? '- ✗ Share legal privileged information or case details' : ''}
+- ✗ Upload confidential documents
 
 **Content Prohibitions**
-- âŒ Generate fake reviews or testimonials
-- âŒ Create misleading content
-- âŒ Produce content that discriminates against individuals or groups
-- âŒ Generate inappropriate or offensive content
+- ✗ Generate fake reviews or testimonials
+- ✗ Create misleading content
+- ✗ Produce content that discriminates against individuals or groups
+- ✗ Generate inappropriate or offensive content
 
 **Decision Prohibitions**
-- âŒ Let AI make final decisions about people
-- âŒ Use AI advice without independent verification
-- âŒ Present AI-generated professional advice as your own expert opinion
-${industry.redFlags.map(r => `- âŒ ${r.replace('NEVER ', '')}`).join('\n')}
+- ✗ Let AI make final decisions about people
+- ✗ Use AI advice without independent verification
+- ✗ Present AI-generated professional advice as your own expert opinion
+${industry.redFlags.map(r => `- ✗ ${r.replace('NEVER ', '')}`).join('\n')}
 
 ---
 
-## ðŸ›¡ï¸ DATA HANDLING RULES
+## DATA HANDLING RULES
 
 ### Before You Enter Anything, Ask:
 
-1. **Could this identify a real person?** â†’ Don't enter it
-2. **Is this confidential to a client?** â†’ Don't enter it
-3. **Would I be comfortable if this became public?** â†’ If no, don't enter it
-4. **Am I using a public/free AI tool?** â†’ Use extra caution
+1. **Could this identify a real person?** → Don't enter it
+2. **Is this confidential to a client?** → Don't enter it
+3. **Would I be comfortable if this became public?** → If no, don't enter it
+4. **Am I using a public/free AI tool?** → Use extra caution
 
 ### Safe Practices
 
@@ -1177,7 +1177,7 @@ ${industry.redFlags.map(r => `- âŒ ${r.replace('NEVER ', '')}`).join('\n')}
 
 ---
 
-## ðŸ“‹ APPROVED TOOLS
+## APPROVED TOOLS
 
 ${aiContext.tools.length > 0 ? `
 | Tool | Approved For | Not Approved For |
@@ -1195,15 +1195,15 @@ If you want to use a tool not on the approved list:
 
 ---
 
-## ðŸ”§ QUALITY CONTROL
+## QUALITY CONTROL
 
 ### Every AI Output Must Be:
 
-- [ ] **Read completely** â€” Don't just skim
-- [ ] **Checked for accuracy** â€” Verify facts, figures, and claims
-- [ ] **Reviewed for tone** â€” Appropriate for audience and purpose
-- [ ] **Verified for sources** â€” Don't trust AI citations without checking
-- [ ] **Approved if external** â€” ${businessProfile.size === 'solo' ? 'Take time to review before sending' : 'Get appropriate sign-off'}
+- [ ] **Read completely** — Don't just skim
+- [ ] **Checked for accuracy** — Verify facts, figures, and claims
+- [ ] **Reviewed for tone** — Appropriate for audience and purpose
+- [ ] **Verified for sources** — Don't trust AI citations without checking
+- [ ] **Approved if external** — ${businessProfile.size === 'solo' ? 'Take time to review before sending' : 'Get appropriate sign-off'}
 
 ### Common AI Errors to Catch
 
@@ -1215,15 +1215,15 @@ If you want to use a tool not on the approved list:
 
 ---
 
-## ðŸš¨ INCIDENT RESPONSE
+## INCIDENT RESPONSE
 
 ### If Something Goes Wrong:
 
-1. **STOP** â€” Don't continue using the tool
-2. **DON'T PANIC** â€” Mistakes happen
-3. **REPORT** â€” Tell ${getGovernanceRole(businessProfile.size)} within 24 hours
-4. **DOCUMENT** â€” Write down what happened
-5. **COOPERATE** â€” Help with any investigation
+1. **STOP** — Don't continue using the tool
+2. **DON'T PANIC** — Mistakes happen
+3. **REPORT** — Tell ${getGovernanceRole(businessProfile.size)} within 24 hours
+4. **DOCUMENT** — Write down what happened
+5. **COOPERATE** — Help with any investigation
 
 ### What Counts as an Incident?
 
@@ -1235,31 +1235,31 @@ If you want to use a tool not on the approved list:
 
 ---
 
-## â“ QUICK DECISION GUIDE
+## ? QUICK DECISION GUIDE
 
 **"Should I use AI for this?"**
 
 \`\`\`
 START
-  â†“
+  ↓
 Does it involve sensitive/client data? 
-  YES â†’ DON'T USE AI (or anonymize completely)
-  NO â†“
+  YES → DON'T USE AI (or anonymize completely)
+  NO ↓
 Is this an approved tool?
-  NO â†’ Get approval first
-  YES â†“
+  NO → Get approval first
+  YES ↓
 Will I review the output before using it?
-  NO â†’ Reconsider your approach
-  YES â†“
+  NO → Reconsider your approach
+  YES ↓
 Could an error cause significant harm?
-  YES â†’ Extra review required
-  NO â†“
+  YES → Extra review required
+  NO ↓
 PROCEED WITH NORMAL CARE
 \`\`\`
 
 ---
 
-## ðŸ“ž QUESTIONS?
+## QUESTIONS?
 
 ${businessProfile.size === 'solo' ? `
 When uncertain, pause and reflect. Consider:
@@ -1288,10 +1288,10 @@ function generateR01_RiskReport(ctx: PersonalisationContext): string {
   const { businessProfile, riskProfile, industry, dataContext, clientContext, maturityContext, regulatoryContext, aiContext } = ctx;
   
   const riskLevelEmoji = {
-    low: 'ðŸŸ¢',
-    medium: 'ðŸŸ¡',
-    high: 'ðŸŸ ',
-    critical: 'ðŸ”´',
+    low: 'LOW',
+    medium: 'MEDIUM',
+    high: 'ELEVATED',
+    critical: 'HIGH',
   };
   
   const riskLevelDescription = {
@@ -1333,7 +1333,7 @@ ${businessProfile.name} is ${businessProfile.sizeDescription} in the ${industry.
 }
 
 ${aiContext.isInformalUsage ? `
-âš ï¸ **Shadow AI Alert:** Informal or unknown AI usage represents an elevated risk factor. This pack will help you bring visibility and control to AI practices.
+⚠ **Shadow AI Alert:** Informal or unknown AI usage represents an elevated risk factor. This pack will help you bring visibility and control to AI practices.
 ` : ''}
 
 ---
@@ -1344,12 +1344,12 @@ ${aiContext.isInformalUsage ? `
 
 | Risk Category | Score | Level | Priority |
 |--------------|-------|-------|----------|
-| Data Privacy | ${Math.round(riskProfile.categoryScores.dataPrivacy)}/100 | ${riskProfile.categoryScores.dataPrivacy >= 60 ? 'ðŸ”´ High' : riskProfile.categoryScores.dataPrivacy >= 40 ? 'ðŸŸ¡ Medium' : 'ðŸŸ¢ Low'} | ${riskProfile.categoryScores.dataPrivacy >= 60 ? 'Urgent' : riskProfile.categoryScores.dataPrivacy >= 40 ? 'Important' : 'Monitor'} |
-| Compliance | ${Math.round(riskProfile.categoryScores.compliance)}/100 | ${riskProfile.categoryScores.compliance >= 60 ? 'ðŸ”´ High' : riskProfile.categoryScores.compliance >= 40 ? 'ðŸŸ¡ Medium' : 'ðŸŸ¢ Low'} | ${riskProfile.categoryScores.compliance >= 60 ? 'Urgent' : riskProfile.categoryScores.compliance >= 40 ? 'Important' : 'Monitor'} |
-| Operational | ${Math.round(riskProfile.categoryScores.operational)}/100 | ${riskProfile.categoryScores.operational >= 60 ? 'ðŸ”´ High' : riskProfile.categoryScores.operational >= 40 ? 'ðŸŸ¡ Medium' : 'ðŸŸ¢ Low'} | ${riskProfile.categoryScores.operational >= 60 ? 'Urgent' : riskProfile.categoryScores.operational >= 40 ? 'Important' : 'Monitor'} |
-| Reputational | ${Math.round(riskProfile.categoryScores.reputational)}/100 | ${riskProfile.categoryScores.reputational >= 60 ? 'ðŸ”´ High' : riskProfile.categoryScores.reputational >= 40 ? 'ðŸŸ¡ Medium' : 'ðŸŸ¢ Low'} | ${riskProfile.categoryScores.reputational >= 60 ? 'Urgent' : riskProfile.categoryScores.reputational >= 40 ? 'Important' : 'Monitor'} |
-| Security | ${Math.round(riskProfile.categoryScores.security)}/100 | ${riskProfile.categoryScores.security >= 60 ? 'ðŸ”´ High' : riskProfile.categoryScores.security >= 40 ? 'ðŸŸ¡ Medium' : 'ðŸŸ¢ Low'} | ${riskProfile.categoryScores.security >= 60 ? 'Urgent' : riskProfile.categoryScores.security >= 40 ? 'Important' : 'Monitor'} |
-| Client Exposure | ${Math.round(riskProfile.categoryScores.clientExposure)}/100 | ${riskProfile.categoryScores.clientExposure >= 60 ? 'ðŸ”´ High' : riskProfile.categoryScores.clientExposure >= 40 ? 'ðŸŸ¡ Medium' : 'ðŸŸ¢ Low'} | ${riskProfile.categoryScores.clientExposure >= 60 ? 'Urgent' : riskProfile.categoryScores.clientExposure >= 40 ? 'Important' : 'Monitor'} |
+| Data Privacy | ${Math.round(riskProfile.categoryScores.dataPrivacy)}/100 | ${riskProfile.categoryScores.dataPrivacy >= 60 ? 'HIGH' : riskProfile.categoryScores.dataPrivacy >= 40 ? 'MEDIUM' : 'LOW'} | ${riskProfile.categoryScores.dataPrivacy >= 60 ? 'Urgent' : riskProfile.categoryScores.dataPrivacy >= 40 ? 'Important' : 'Monitor'} |
+| Compliance | ${Math.round(riskProfile.categoryScores.compliance)}/100 | ${riskProfile.categoryScores.compliance >= 60 ? 'HIGH' : riskProfile.categoryScores.compliance >= 40 ? 'MEDIUM' : 'LOW'} | ${riskProfile.categoryScores.compliance >= 60 ? 'Urgent' : riskProfile.categoryScores.compliance >= 40 ? 'Important' : 'Monitor'} |
+| Operational | ${Math.round(riskProfile.categoryScores.operational)}/100 | ${riskProfile.categoryScores.operational >= 60 ? 'HIGH' : riskProfile.categoryScores.operational >= 40 ? 'MEDIUM' : 'LOW'} | ${riskProfile.categoryScores.operational >= 60 ? 'Urgent' : riskProfile.categoryScores.operational >= 40 ? 'Important' : 'Monitor'} |
+| Reputational | ${Math.round(riskProfile.categoryScores.reputational)}/100 | ${riskProfile.categoryScores.reputational >= 60 ? 'HIGH' : riskProfile.categoryScores.reputational >= 40 ? 'MEDIUM' : 'LOW'} | ${riskProfile.categoryScores.reputational >= 60 ? 'Urgent' : riskProfile.categoryScores.reputational >= 40 ? 'Important' : 'Monitor'} |
+| Security | ${Math.round(riskProfile.categoryScores.security)}/100 | ${riskProfile.categoryScores.security >= 60 ? 'HIGH' : riskProfile.categoryScores.security >= 40 ? 'MEDIUM' : 'LOW'} | ${riskProfile.categoryScores.security >= 60 ? 'Urgent' : riskProfile.categoryScores.security >= 40 ? 'Important' : 'Monitor'} |
+| Client Exposure | ${Math.round(riskProfile.categoryScores.clientExposure)}/100 | ${riskProfile.categoryScores.clientExposure >= 60 ? 'HIGH' : riskProfile.categoryScores.clientExposure >= 40 ? 'MEDIUM' : 'LOW'} | ${riskProfile.categoryScores.clientExposure >= 60 ? 'Urgent' : riskProfile.categoryScores.clientExposure >= 40 ? 'Important' : 'Monitor'} |
 
 ### Analysis by Category
 
@@ -1358,21 +1358,21 @@ ${aiContext.isInformalUsage ? `
 You handle the following data types that create privacy obligations:
 ${dataContext.dataTypes.map(t => {
   const descriptions: Record<string, string> = {
-    personal: 'Personal information â€” Subject to Australian Privacy Principles',
-    financial: 'Financial data â€” High sensitivity, potential for fraud/harm',
-    health: 'Health information â€” Subject to enhanced health records protections',
-    children: 'Children\'s data â€” Requires enhanced protections and parental considerations',
-    employee: 'Employee records â€” Subject to workplace privacy requirements',
-    confidential_business: 'Confidential business information â€” Strategic and commercial sensitivity',
-    legal_privileged: 'Legal privileged information â€” Privilege may be waived if disclosed to AI',
-    government: 'Government information â€” Subject to specific handling requirements',
-    biometric: 'Biometric data â€” Subject to enhanced privacy protections',
-    public: 'Public information â€” Lowest risk category',
+    personal: 'Personal information — Subject to Australian Privacy Principles',
+    financial: 'Financial data — High sensitivity, potential for fraud/harm',
+    health: 'Health information — Subject to enhanced health records protections',
+    children: 'Children\'s data — Requires enhanced protections and parental considerations',
+    employee: 'Employee records — Subject to workplace privacy requirements',
+    confidential_business: 'Confidential business information — Strategic and commercial sensitivity',
+    legal_privileged: 'Legal privileged information — Privilege may be waived if disclosed to AI',
+    government: 'Government information — Subject to specific handling requirements',
+    biometric: 'Biometric data — Subject to enhanced privacy protections',
+    public: 'Public information — Lowest risk category',
   };
-  return `- **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** â€” ${descriptions[t] || 'Requires appropriate handling'}`;
+  return `- **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** — ${descriptions[t] || 'Requires appropriate handling'}`;
 }).join('\n')}
 
-${dataContext.sensitivityLevel === 'high_high' ? 'âš ï¸ **High volume + high sensitivity** creates significant data privacy exposure. Implement strict controls.' : ''}
+${dataContext.sensitivityLevel === 'high_high' ? '⚠ **High volume + high sensitivity** creates significant data privacy exposure. Implement strict controls.' : ''}
 
 #### Compliance Risk (${Math.round(riskProfile.categoryScores.compliance)}/100)
 
@@ -1381,12 +1381,12 @@ ${regulatoryContext.applicableRegulations.map(r => `
 **${r.name}**
 ${r.requirements.map(req => `- ${req}`).join('\n')}`).join('\n')}
 
-${regulatoryContext.level === 'heavy' ? 'âš ï¸ **Heavy regulation** means higher compliance stakes. Consider professional compliance advice.' : ''}
+${regulatoryContext.level === 'heavy' ? '⚠ **Heavy regulation** means higher compliance stakes. Consider professional compliance advice.' : ''}
 
 #### Client Exposure Risk (${Math.round(riskProfile.categoryScores.clientExposure)}/100)
 
 ${clientContext.servesRegulatedClients ? `
-âš ï¸ **You serve clients in regulated industries.** Their compliance requirements may flow through to you:
+⚠ **You serve clients in regulated industries.** Their compliance requirements may flow through to you:
 - Check client agreements for AI restrictions
 - Obtain explicit consent before AI processing of client data
 - Report AI-related incidents affecting client data
@@ -1394,7 +1394,7 @@ ${clientContext.servesRegulatedClients ? `
 ` : ''}
 
 ${clientContext.isServiceProvider ? `
-âš ï¸ **As a service provider,** you have additional obligations:
+⚠ **As a service provider,** you have additional obligations:
 - You process data on behalf of other businesses
 - Their compliance requirements become your operational requirements
 - AI incidents affecting client data have broader impact
@@ -1414,12 +1414,12 @@ ${industry.specificRisks.map((r, i) => `${i + 1}. **${r}**`).join('\n')}
 ### Red Flags for Your Industry
 
 These practices are particularly dangerous in your sector:
-${industry.redFlags.map(r => `- âŒ ${r}`).join('\n')}
+${industry.redFlags.map(r => `- ✗ ${r}`).join('\n')}
 
 ### Permitted Uses
 
 These AI applications are generally acceptable with appropriate controls:
-${industry.permittedUses.map(u => `- âœ… ${u}`).join('\n')}
+${industry.permittedUses.map(u => `- ✓ ${u}`).join('\n')}
 
 ---
 
@@ -1428,26 +1428,26 @@ ${industry.permittedUses.map(u => `- âœ… ${u}`).join('\n')}
 ### Current State
 
 ${maturityContext.hasFoundation ? `
-âœ… **Existing governance foundation detected.** You have some policies in place:
+✓ **Existing governance foundation detected.** You have some policies in place:
 ${maturityContext.existingPolicies.filter(p => p !== 'none' && p !== 'unknown').map(p => `- ${p.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n')}
 
 This provides a foundation to build upon. The AI-specific documents in this pack will complement your existing governance.
 ` : `
-âš ï¸ **Limited existing governance.** This pack will help establish essential controls. Consider this a starting point for broader governance development.
+⚠ **Limited existing governance.** This pack will help establish essential controls. Consider this a starting point for broader governance development.
 `}
 
 ### Incident History
 
 ${maturityContext.incidentHistory === 'significant_incident' ? `
-ðŸ”´ **You've reported a significant AI-related incident.** This highlights the importance of robust governance. Use this experience to drive adoption of controls and ensure ${businessProfile.staffTerm} understand the real stakes involved.
+**HIGH** — You've reported a significant AI-related incident.** This highlights the importance of robust governance. Use this experience to drive adoption of controls and ensure ${businessProfile.staffTerm} understand the real stakes involved.
 ` : maturityContext.incidentHistory === 'near_miss' ? `
-ðŸŸ¡ **You've had near-misses or minor concerns.** This is valuable learning. Use these experiences to illustrate why governance matters and to identify specific areas needing attention.
+**MEDIUM** — You've had near-misses or minor concerns.** This is valuable learning. Use these experiences to illustrate why governance matters and to identify specific areas needing attention.
 ` : maturityContext.incidentHistory === 'staff_concerns' ? `
-ðŸŸ¡ **Staff have raised concerns about AI use.** This awareness is positive. Address concerns directly and involve ${businessProfile.staffTerm} in developing governance practices.
+**MEDIUM** — Staff have raised concerns about AI use.** This awareness is positive. Address concerns directly and involve ${businessProfile.staffTerm} in developing governance practices.
 ` : maturityContext.incidentHistory === 'too_early' ? `
-âšª **Too early to assess incident history.** As AI usage matures, maintain vigilance and establish incident reporting early.
+⚪ **Too early to assess incident history.** As AI usage matures, maintain vigilance and establish incident reporting early.
 ` : `
-ðŸŸ¢ **No incidents or concerns reported.** Maintain this by implementing proactive controls and building a culture of responsible AI use.
+**LOW** — No incidents or concerns reported.** Maintain this by implementing proactive controls and building a culture of responsible AI use.
 `}
 
 ---
@@ -1490,14 +1490,14 @@ Based on your risk profile, prioritize these actions:
 Based on your risk profile, prioritize these documents from your governance pack:
 
 ### Essential (Start Here)
-1. **P01 - AI Usage Policy** â€” Your foundation document
-2. **S01 - Staff One-Pager** â€” Quick reference for ${businessProfile.staffTerm}
-3. **PL01 - 12-Month Roadmap** â€” Your implementation plan
+1. **P01 - AI Usage Policy** — Your foundation document
+2. **S01 - Staff One-Pager** — Quick reference for ${businessProfile.staffTerm}
+3. **PL01 - 12-Month Roadmap** — Your implementation plan
 
 ### Important (Within First Month)
-4. **P02 - Data Handling Policy** â€” Critical given your data types
-5. **I01 - Incident Response Plan** â€” Be prepared
-6. **V01 - Vendor Assessment Framework** â€” Before approving more tools
+4. **P02 - Data Handling Policy** — Critical given your data types
+5. **I01 - Incident Response Plan** — Be prepared
+6. **V01 - Vendor Assessment Framework** — Before approving more tools
 
 ### Build Over Time
 7. Remaining policy documents
@@ -1508,12 +1508,12 @@ Based on your risk profile, prioritize these documents from your governance pack
 
 ## NEXT STEPS
 
-1. â˜ Review this report with key stakeholders
-2. â˜ Prioritize actions based on your capacity
-3. â˜ Implement AI Usage Policy (P01)
-4. â˜ Share Staff One-Pager (S01) with ${businessProfile.staffTerm}
-5. â˜ Use 12-Month Roadmap (PL01) to plan implementation
-6. â˜ Schedule first governance review (${getReviewCadence(regulatoryContext.level)})
+1. ☐ Review this report with key stakeholders
+2. ☐ Prioritize actions based on your capacity
+3. ☐ Implement AI Usage Policy (P01)
+4. ☐ Share Staff One-Pager (S01) with ${businessProfile.staffTerm}
+5. ☐ Use 12-Month Roadmap (PL01) to plan implementation
+6. ☐ Schedule first governance review (${getReviewCadence(regulatoryContext.level)})
 
 ---
 
@@ -1644,7 +1644,7 @@ ${risks.map(r => `
 | **Category** | ${r.category} |
 | **Likelihood** | ${r.likelihood} |
 | **Impact** | ${r.impact} |
-| **Risk Rating** | ${r.likelihood === 'High' && r.impact === 'High' ? 'ðŸ”´ Critical' : (r.likelihood === 'High' || r.impact === 'High') ? 'ðŸŸ  High' : r.likelihood === 'Medium' || r.impact === 'Medium' ? 'ðŸŸ¡ Medium' : 'ðŸŸ¢ Low'} |
+| **Risk Rating** | ${r.likelihood === 'High' && r.impact === 'High' ? 'CRITICAL' : (r.likelihood === 'High' || r.impact === 'High') ? 'HIGH' : r.likelihood === 'Medium' || r.impact === 'Medium' ? 'MEDIUM' : 'LOW'} |
 | **Controls** | ${r.controls} |
 | **Owner** | ${r.owner} |
 | **Status** | ${r.status} |
@@ -1657,10 +1657,10 @@ ${risks.map(r => `
 
 | Rating | Count |
 |--------|-------|
-| ðŸ”´ Critical | ${risks.filter(r => r.likelihood === 'High' && r.impact === 'High').length} |
-| ðŸŸ  High | ${risks.filter(r => (r.likelihood === 'High' || r.impact === 'High') && !(r.likelihood === 'High' && r.impact === 'High')).length} |
-| ðŸŸ¡ Medium | ${risks.filter(r => (r.likelihood === 'Medium' || r.impact === 'Medium') && r.likelihood !== 'High' && r.impact !== 'High').length} |
-| ðŸŸ¢ Low | ${risks.filter(r => r.likelihood === 'Low' && r.impact !== 'High').length} |
+| HIGH Critical | ${risks.filter(r => r.likelihood === 'High' && r.impact === 'High').length} |
+| ELEVATED High | ${risks.filter(r => (r.likelihood === 'High' || r.impact === 'High') && !(r.likelihood === 'High' && r.impact === 'High')).length} |
+| MEDIUM Medium | ${risks.filter(r => (r.likelihood === 'Medium' || r.impact === 'Medium') && r.likelihood !== 'High' && r.impact !== 'High').length} |
+| LOW Low | ${risks.filter(r => r.likelihood === 'Low' && r.impact !== 'High').length} |
 
 ---
 
@@ -1718,19 +1718,19 @@ Use this checklist to assess compliance with AI governance requirements. Complet
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| AI Usage Policy in place | â˜ Yes â˜ No â˜ Partial | | |
-| Policy communicated to all ${businessProfile.staffTerm} | â˜ Yes â˜ No â˜ Partial | | |
-| Policy acknowledgments collected | â˜ Yes â˜ No â˜ N/A | | |
-| Policy reviewed within last 12 months | â˜ Yes â˜ No | | |
-| Designated AI governance owner | â˜ Yes â˜ No | | |
+| AI Usage Policy in place | ☐ Yes ☐ No ☐ Partial | | |
+| Policy communicated to all ${businessProfile.staffTerm} | ☐ Yes ☐ No ☐ Partial | | |
+| Policy acknowledgments collected | ☐ Yes ☐ No ☐ N/A | | |
+| Policy reviewed within last 12 months | ☐ Yes ☐ No | | |
+| Designated AI governance owner | ☐ Yes ☐ No | | |
 
 ### 1.2 Governance Structure
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| Clear roles and responsibilities defined | â˜ Yes â˜ No â˜ Partial | | |
-| Escalation paths documented | â˜ Yes â˜ No | | |
-| Regular governance reviews scheduled | â˜ Yes â˜ No | | |
+| Clear roles and responsibilities defined | ☐ Yes ☐ No ☐ Partial | | |
+| Escalation paths documented | ☐ Yes ☐ No | | |
+| Regular governance reviews scheduled | ☐ Yes ☐ No | | |
 
 ---
 
@@ -1740,19 +1740,19 @@ Use this checklist to assess compliance with AI governance requirements. Complet
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| Data classification framework in place | â˜ Yes â˜ No â˜ Partial | | |
-| ${businessProfile.staffTerm.charAt(0).toUpperCase() + businessProfile.staffTerm.slice(1)} trained on classification | â˜ Yes â˜ No â˜ Partial | | |
-| Classification applied to AI tool permissions | â˜ Yes â˜ No | | |
+| Data classification framework in place | ☐ Yes ☐ No ☐ Partial | | |
+| ${businessProfile.staffTerm.charAt(0).toUpperCase() + businessProfile.staffTerm.slice(1)} trained on classification | ☐ Yes ☐ No ☐ Partial | | |
+| Classification applied to AI tool permissions | ☐ Yes ☐ No | | |
 
 ### 2.2 Data Handling
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| Prohibited data types documented | â˜ Yes â˜ No | | |
-| ${dataContext.dataTypes.includes('health') ? 'Health data excluded from AI tools | â˜ Yes â˜ No â˜ N/A | | |' : ''}
-| ${dataContext.dataTypes.includes('financial') ? 'Financial data excluded from AI tools | â˜ Yes â˜ No â˜ N/A | | |' : ''}
-| ${dataContext.dataTypes.includes('children') ? 'Children\'s data excluded from AI tools | â˜ Yes â˜ No â˜ N/A | | |' : ''}
-| Anonymisation requirements documented | â˜ Yes â˜ No | | |
+| Prohibited data types documented | ☐ Yes ☐ No | | |
+| ${dataContext.dataTypes.includes('health') ? 'Health data excluded from AI tools | ☐ Yes ☐ No ☐ N/A | | |' : ''}
+| ${dataContext.dataTypes.includes('financial') ? 'Financial data excluded from AI tools | ☐ Yes ☐ No ☐ N/A | | |' : ''}
+| ${dataContext.dataTypes.includes('children') ? 'Children\'s data excluded from AI tools | ☐ Yes ☐ No ☐ N/A | | |' : ''}
+| Anonymisation requirements documented | ☐ Yes ☐ No | | |
 
 ---
 
@@ -1762,18 +1762,18 @@ Use this checklist to assess compliance with AI governance requirements. Complet
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| Approved tool register maintained | â˜ Yes â˜ No | | |
-| Tool approval process documented | â˜ Yes â˜ No | | |
-| All tools assessed for data practices | â˜ Yes â˜ No â˜ Partial | | |
-| Tool terms reviewed for training opt-out | â˜ Yes â˜ No â˜ Partial | | |
+| Approved tool register maintained | ☐ Yes ☐ No | | |
+| Tool approval process documented | ☐ Yes ☐ No | | |
+| All tools assessed for data practices | ☐ Yes ☐ No ☐ Partial | | |
+| Tool terms reviewed for training opt-out | ☐ Yes ☐ No ☐ Partial | | |
 
 ### 3.2 Shadow AI
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| Awareness of potential unauthorized use | â˜ Yes â˜ No | | |
-| Process to identify unauthorized tools | â˜ Yes â˜ No | | |
-| Safe harbor for reporting unauthorized use | â˜ Yes â˜ No | | |
+| Awareness of potential unauthorized use | ☐ Yes ☐ No | | |
+| Process to identify unauthorized tools | ☐ Yes ☐ No | | |
+| Safe harbor for reporting unauthorized use | ☐ Yes ☐ No | | |
 
 ---
 
@@ -1783,14 +1783,14 @@ Use this checklist to assess compliance with AI governance requirements. Complet
 
 | Regulation | Applicable | Compliant | Evidence | Action Needed |
 |------------|------------|-----------|----------|---------------|
-| Privacy Act 1988 / APPs | â˜ Yes â˜ No | â˜ Yes â˜ No â˜ Partial | | |
-${regulatoryContext.applicableRegulations.map(r => `| ${r.name} | â˜ Yes â˜ No | â˜ Yes â˜ No â˜ Partial | | |`).join('\n')}
+| Privacy Act 1988 / APPs | ☐ Yes ☐ No | ☐ Yes ☐ No ☐ Partial | | |
+${regulatoryContext.applicableRegulations.map(r => `| ${r.name} | ☐ Yes ☐ No | ☐ Yes ☐ No ☐ Partial | | |`).join('\n')}
 
 ### 4.2 Industry-Specific
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-${industry.regulations.map(r => `| ${r.name} compliance | â˜ Yes â˜ No â˜ Partial â˜ N/A | | |`).join('\n')}
+${industry.regulations.map(r => `| ${r.name} compliance | ☐ Yes ☐ No ☐ Partial ☐ N/A | | |`).join('\n')}
 
 ---
 
@@ -1800,10 +1800,10 @@ ${industry.regulations.map(r => `| ${r.name} compliance | â˜ Yes â˜ No �
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| Incident response plan in place | â˜ Yes â˜ No | | |
-| Incident reporting process communicated | â˜ Yes â˜ No | | |
-| Incident log maintained | â˜ Yes â˜ No | | |
-| Notifiable breach process understood | â˜ Yes â˜ No | | |
+| Incident response plan in place | ☐ Yes ☐ No | | |
+| Incident reporting process communicated | ☐ Yes ☐ No | | |
+| Incident log maintained | ☐ Yes ☐ No | | |
+| Notifiable breach process understood | ☐ Yes ☐ No | | |
 
 ---
 
@@ -1813,10 +1813,10 @@ ${industry.regulations.map(r => `| ${r.name} compliance | â˜ Yes â˜ No �
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| AI awareness training provided | â˜ Yes â˜ No â˜ Partial | | |
-| Training completion tracked | â˜ Yes â˜ No â˜ N/A | | |
-| Regular updates/refreshers provided | â˜ Yes â˜ No | | |
-| Quick reference materials available | â˜ Yes â˜ No | | |
+| AI awareness training provided | ☐ Yes ☐ No ☐ Partial | | |
+| Training completion tracked | ☐ Yes ☐ No ☐ N/A | | |
+| Regular updates/refreshers provided | ☐ Yes ☐ No | | |
+| Quick reference materials available | ☐ Yes ☐ No | | |
 
 ---
 
@@ -1826,9 +1826,9 @@ ${industry.regulations.map(r => `| ${r.name} compliance | â˜ Yes â˜ No �
 
 | Requirement | Status | Evidence | Action Needed |
 |-------------|--------|----------|---------------|
-| Review process for AI outputs | â˜ Yes â˜ No | | |
-| Fact-checking requirements documented | â˜ Yes â˜ No | | |
-| Approval process for external content | â˜ Yes â˜ No | | |
+| Review process for AI outputs | ☐ Yes ☐ No | | |
+| Fact-checking requirements documented | ☐ Yes ☐ No | | |
+| Approval process for external content | ☐ Yes ☐ No | | |
 
 ---
 
@@ -1836,15 +1836,15 @@ ${industry.regulations.map(r => `| ${r.name} compliance | â˜ Yes â˜ No �
 
 | Section | Status |
 |---------|--------|
-| 1. Policy and Governance | â˜ Compliant â˜ Partial â˜ Non-Compliant |
-| 2. Data Protection | â˜ Compliant â˜ Partial â˜ Non-Compliant |
-| 3. Tool Management | â˜ Compliant â˜ Partial â˜ Non-Compliant |
-| 4. Regulatory Compliance | â˜ Compliant â˜ Partial â˜ Non-Compliant |
-| 5. Incident Management | â˜ Compliant â˜ Partial â˜ Non-Compliant |
-| 6. Training and Awareness | â˜ Compliant â˜ Partial â˜ Non-Compliant |
-| 7. Quality Control | â˜ Compliant â˜ Partial â˜ Non-Compliant |
+| 1. Policy and Governance | ☐ Compliant ☐ Partial ☐ Non-Compliant |
+| 2. Data Protection | ☐ Compliant ☐ Partial ☐ Non-Compliant |
+| 3. Tool Management | ☐ Compliant ☐ Partial ☐ Non-Compliant |
+| 4. Regulatory Compliance | ☐ Compliant ☐ Partial ☐ Non-Compliant |
+| 5. Incident Management | ☐ Compliant ☐ Partial ☐ Non-Compliant |
+| 6. Training and Awareness | ☐ Compliant ☐ Partial ☐ Non-Compliant |
+| 7. Quality Control | ☐ Compliant ☐ Partial ☐ Non-Compliant |
 
-**Overall Assessment:** â˜ Compliant â˜ Partial Compliance â˜ Non-Compliant
+**Overall Assessment:** ☐ Compliant ☐ Partial Compliance ☐ Non-Compliant
 
 ---
 
@@ -1925,8 +1925,8 @@ ${aiContext.tools.length > 0 ? aiContext.tools.map(t => `
 
 **Data Flow Diagram:**
 \`\`\`
-[Your Data] â†’ [${t}] â†’ [AI Provider Servers] â†’ [Output]
-                â†“
+[Your Data] → [${t}] → [AI Provider Servers] → [Output]
+                ↓
         [Training?] [Storage?]
 \`\`\`
 `).join('\n') : `
@@ -2038,36 +2038,36 @@ function generateS01_StaffOnePager(ctx: PersonalisationContext): string {
 ---
 
 ${aiContext.usageLevel === 'informal' ? `
-### âš¡ IMPORTANT
+### ⚡ IMPORTANT
 
-We know AI tools are already being used informally. This guide brings that into a clear framework. No one's in trouble â€” we just need everyone on the same page.
+We know AI tools are already being used informally. This guide brings that into a clear framework. No one's in trouble — we just need everyone on the same page.
 
 ---
 ` : aiContext.usageLevel === 'planning' ? `
-### ðŸš€ GETTING READY
+### GETTING READY
 
 We're preparing to use AI tools. This guide sets the ground rules before we start.
 
 ---
 ` : ''}
 
-### âœ… ${businessProfile.size === 'solo' ? 'YOU CAN' : 'WE CAN'} USE AI FOR:
+### ✓ ${businessProfile.size === 'solo' ? 'YOU CAN' : 'WE CAN'} USE AI FOR:
 
-${industry.permittedUses.slice(0, 5).map(u => `â€¢ ${u}`).join('\n')}
-â€¢ Brainstorming and ideation
-â€¢ Grammar and style checking
-
----
-
-### âŒ NEVER USE AI FOR:
-
-${industry.redFlags.slice(0, 4).map(r => `â€¢ ${r.replace('NEVER ', '')}`).join('\n')}
-â€¢ Creating fake reviews or testimonials
-â€¢ Final decisions about people without human review
+${industry.permittedUses.slice(0, 5).map(u => `• ${u}`).join('\n')}
+• Brainstorming and ideation
+• Grammar and style checking
 
 ---
 
-### ðŸ”’ PROTECT THIS DATA â€” NEVER ENTER INTO AI:
+### ✗ NEVER USE AI FOR:
+
+${industry.redFlags.slice(0, 4).map(r => `• ${r.replace('NEVER ', '')}`).join('\n')}
+• Creating fake reviews or testimonials
+• Final decisions about people without human review
+
+---
+
+### PROTECT THIS DATA — NEVER ENTER INTO AI:
 
 ${dataContext.dataTypes.filter(t => t !== 'public').slice(0, 6).map(t => {
   const examples: Record<string, string> = {
@@ -2081,28 +2081,28 @@ ${dataContext.dataTypes.filter(t => t !== 'public').slice(0, 6).map(t => {
     government: 'Government IDs, classified information',
     biometric: 'Fingerprints, facial data, voice prints',
   };
-  return `â€¢ **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** â€” ${examples[t] || 'Handle with care'}`;
+  return `• **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** — ${examples[t] || 'Handle with care'}`;
 }).join('\n')}
 
 ---
 
-### âš ï¸ BEFORE ${businessProfile.size === 'solo' ? 'YOU' : 'WE'} USE AI â€” QUICK CHECK:
+### ⚠ BEFORE ${businessProfile.size === 'solo' ? 'YOU' : 'WE'} USE AI — QUICK CHECK:
 
 | Question | If YES... |
 |----------|-----------|
-| Is this sensitive data? | âŒ Don't use AI |
-| Could this identify someone? | âŒ Remove details first |
-| Will this be published? | â¸ï¸ Get it reviewed |
-| Am I using an approved tool? | âœ… Proceed with care |
-| Not sure? | â“ Ask first |
+| Is this sensitive data? | ✗ Don't use AI |
+| Could this identify someone? | ✗ Remove details first |
+| Will this be published? | [PAUSE] Get it reviewed |
+| Am I using an approved tool? | ✓ Proceed with care |
+| Not sure? | ? Ask first |
 
 ---
 
-### ðŸ› ï¸ ${aiContext.tools.length > 0 ? 'APPROVED TOOLS' : 'TOOL APPROVAL'}
+### [TOOLS] ${aiContext.tools.length > 0 ? 'APPROVED TOOLS' : 'TOOL APPROVAL'}
 
 ${aiContext.tools.length > 0 ? `
 Currently approved:
-${aiContext.tools.slice(0, 4).map(t => `â€¢ ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n')}
+${aiContext.tools.slice(0, 4).map(t => `• ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n')}
 
 **Other tools?** Get approval first.
 ` : `
@@ -2111,21 +2111,21 @@ ${aiContext.tools.slice(0, 4).map(t => `â€¢ ${t.replace(/_/g, ' ').replace(/
 
 ---
 
-### ðŸ”„ ALWAYS DO THIS:
+### [CYCLE] ALWAYS DO THIS:
 
-1. **READ** AI output completely â€” don't just skim
-2. **CHECK** facts, figures, and citations â€” AI makes stuff up
+1. **READ** AI output completely — don't just skim
+2. **CHECK** facts, figures, and citations — AI makes stuff up
 3. **REVIEW** tone and appropriateness
 4. **VERIFY** before sharing externally
 
 ---
 
-### ðŸš¨ IF SOMETHING GOES WRONG:
+### IF SOMETHING GOES WRONG:
 
 **It happens. Here's what to do:**
 
 1. **STOP** using the tool
-2. **DON'T PANIC** â€” we're here to help, not blame
+2. **DON'T PANIC** — we're here to help, not blame
 3. **REPORT** to ${businessProfile.size === 'solo' ? 'document it yourself' : getGovernanceRole(businessProfile.size)} within 24 hours
 4. **DOCUMENT** what happened
 
@@ -2135,16 +2135,16 @@ ${businessProfile.size !== 'solo' ? `
 
 ---
 
-### ðŸ“ž QUESTIONS?
+### QUESTIONS?
 
 ${businessProfile.size === 'solo' ? `
-â€¢ Review the full AI Usage Policy
-â€¢ Check with your professional body
-â€¢ When in doubt, don't
+• Review the full AI Usage Policy
+• Check with your professional body
+• When in doubt, don't
 ` : `
-â€¢ Ask ${getGovernanceRole(businessProfile.size)}
-â€¢ Check the AI Usage Policy (P01)
-â€¢ When in doubt, ask first
+• Ask ${getGovernanceRole(businessProfile.size)}
+• Check the AI Usage Policy (P01)
+• When in doubt, ask first
 `}
 
 ---
@@ -2187,10 +2187,10 @@ AI (Artificial Intelligence) tools are software that can:
 - Assist with various tasks
 
 **Common AI tools include:**
-- ChatGPT, Claude, Google Gemini â€” text generation and Q&A
-- Microsoft Copilot â€” integrated into Office apps
-- Image generators â€” Midjourney, DALL-E, Adobe Firefly
-- Transcription tools â€” Otter.ai, Fireflies
+- ChatGPT, Claude, Google Gemini — text generation and Q&A
+- Microsoft Copilot — integrated into Office apps
+- Image generators — Midjourney, DALL-E, Adobe Firefly
+- Transcription tools — Otter.ai, Fireflies
 - Industry-specific AI applications
 
 ### How AI Works (Simply)
@@ -2198,19 +2198,19 @@ AI (Artificial Intelligence) tools are software that can:
 1. AI is trained on massive amounts of text/data from the internet
 2. It learns patterns and can generate similar content
 3. It predicts what comes next based on your input (prompt)
-4. It doesn't truly "understand" â€” it's sophisticated pattern matching
+4. It doesn't truly "understand" — it's sophisticated pattern matching
 
 ### Key Limitations
 
-âš ï¸ **AI can be wrong.** It confidently states incorrect information.
+⚠ **AI can be wrong.** It confidently states incorrect information.
 
-âš ï¸ **AI "hallucinates."** It invents facts, citations, and details.
+⚠ **AI "hallucinates."** It invents facts, citations, and details.
 
-âš ï¸ **AI is not current.** Training data has a cutoff date.
+⚠ **AI is not current.** Training data has a cutoff date.
 
-âš ï¸ **AI lacks judgment.** It can't assess appropriateness for your context.
+⚠ **AI lacks judgment.** It can't assess appropriateness for your context.
 
-âš ï¸ **AI may be biased.** It reflects biases in its training data.
+⚠ **AI may be biased.** It reflects biases in its training data.
 
 ---
 
@@ -2239,10 +2239,10 @@ ${r.requirements.slice(0, 2).map(req => `- ${req}`).join('\n')}`).join('\n')}
 
 ### The Golden Rules
 
-1. **Never input sensitive data** â€” Assume everything you type could become public
-2. **Always verify outputs** â€” AI makes mistakes; you're responsible for catching them
-3. **Use approved tools** â€” Unapproved tools may have unsafe data practices
-4. **Disclose when appropriate** â€” Be transparent about AI involvement
+1. **Never input sensitive data** — Assume everything you type could become public
+2. **Always verify outputs** — AI makes mistakes; you're responsible for catching them
+3. **Use approved tools** — Unapproved tools may have unsafe data practices
+4. **Disclose when appropriate** — Be transparent about AI involvement
 
 ### Data Protection in Practice
 
@@ -2266,25 +2266,25 @@ ${r.requirements.slice(0, 2).map(req => `- ${req}`).join('\n')}`).join('\n')}
 
 Every AI output should be:
 
-- â˜ **Read completely** â€” not skimmed
-- â˜ **Fact-checked** â€” verify any facts or figures
-- â˜ **Citation-checked** â€” confirm any references exist
-- â˜ **Tone-checked** â€” appropriate for purpose and audience
-- â˜ **Reviewed** before external use
+- ☐ **Read completely** — not skimmed
+- ☐ **Fact-checked** — verify any facts or figures
+- ☐ **Citation-checked** — confirm any references exist
+- ☐ **Tone-checked** — appropriate for purpose and audience
+- ☐ **Reviewed** before external use
 
 ---
 
 ## Module 4: Permitted and Prohibited Uses
 
-### âœ… Permitted Uses
+### ✓ Permitted Uses
 
 ${industry.permittedUses.map(u => `- ${u}`).join('\n')}
 
-### âŒ Prohibited Uses
+### ✗ Prohibited Uses
 
 ${industry.redFlags.map(r => `- ${r}`).join('\n')}
 
-### âš ï¸ Conditional Uses (Need Extra Care)
+### ⚠ Conditional Uses (Need Extra Care)
 
 - Client communications (must be reviewed, personalized)
 - External-facing content (must be approved)
@@ -2305,10 +2305,10 @@ ${industry.redFlags.map(r => `- ${r}`).join('\n')}
 
 ### What to Do
 
-1. **STOP** â€” Don't continue if something's wrong
-2. **REPORT** â€” Within 24 hours to ${getGovernanceRole(businessProfile.size)}
-3. **DOCUMENT** â€” What happened, when, what data was involved
-4. **COOPERATE** â€” Help investigate if needed
+1. **STOP** — Don't continue if something's wrong
+2. **REPORT** — Within 24 hours to ${getGovernanceRole(businessProfile.size)}
+3. **DOCUMENT** — What happened, when, what data was involved
+4. **COOPERATE** — Help investigate if needed
 
 ### No Blame Culture
 
@@ -2323,7 +2323,7 @@ ${businessProfile.size === 'solo' ?
 ${aiContext.tools.length > 0 ? `
 ### Currently Approved
 
-${aiContext.tools.map(t => `- **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** â€” [Approved use cases]`).join('\n')}
+${aiContext.tools.map(t => `- **${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}** — [Approved use cases]`).join('\n')}
 
 ### Getting a New Tool Approved
 
@@ -2359,7 +2359,7 @@ d) AI shouldn't be used for client emails
 ### Question 2
 AI generates a statistic for a report you're writing. What should you do?
 
-a) Use it â€” AI is accurate
+a) Use it — AI is accurate
 b) Verify the statistic from an authoritative source
 c) Add a disclaimer that it's AI-generated
 d) Remove all statistics
@@ -2369,7 +2369,7 @@ d) Remove all statistics
 ### Question 3
 You accidentally entered a client's name into ChatGPT. What should you do?
 
-a) Nothing â€” it's just a name
+a) Nothing — it's just a name
 b) Delete the conversation and hope for the best
 c) Report the incident to ${getGovernanceRole(businessProfile.size)}
 d) Stop using AI entirely
@@ -2415,7 +2415,7 @@ function generateS03_QuickReferenceCard(ctx: PersonalisationContext): string {
 
 ---
 
-## âœ… DO
+## ✓ DO
 
 - Use approved tools only
 - Review ALL AI outputs
@@ -2424,7 +2424,7 @@ function generateS03_QuickReferenceCard(ctx: PersonalisationContext): string {
 - Report incidents
 - Ask when unsure
 
-## âŒ DON'T
+## ✗ DON'T
 
 - Enter personal data
 - Enter client details
@@ -2439,29 +2439,29 @@ function generateS03_QuickReferenceCard(ctx: PersonalisationContext): string {
 
 | Level | AI OK? |
 |-------|--------|
-| **PUBLIC** | âœ… Yes |
-| **INTERNAL** | âš ï¸ Caution |
-| **CONFIDENTIAL** | âŒ No |
-| **RESTRICTED** | ðŸš« Never |
+| **PUBLIC** | ✓ Yes |
+| **INTERNAL** | ⚠ Caution |
+| **CONFIDENTIAL** | ✗ No |
+| **RESTRICTED** | ✗ Never |
 
 ---
 
 ## PROTECTED DATA
 
 Never enter:
-${dataContext.dataTypes.filter(t => t !== 'public').slice(0, 5).map(t => `â€¢ ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n')}
+${dataContext.dataTypes.filter(t => t !== 'public').slice(0, 5).map(t => `• ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n')}
 
 ---
 
 ## RED FLAGS
 
-${industry.redFlags.slice(0, 3).map(r => `âŒ ${r}`).join('\n')}
+${industry.redFlags.slice(0, 3).map(r => `✗ ${r}`).join('\n')}
 
 ---
 
 ## APPROVED TOOLS
 
-${aiContext.tools.length > 0 ? aiContext.tools.slice(0, 4).map(t => `âœ“ ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n') : '(Check with ' + getGovernanceRole(businessProfile.size) + ')'}
+${aiContext.tools.length > 0 ? aiContext.tools.slice(0, 4).map(t => `✓ ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}`).join('\n') : '(Check with ' + getGovernanceRole(businessProfile.size) + ')'}
 
 ---
 
@@ -2502,11 +2502,11 @@ As ${businessProfile.size === 'solo' ? 'a sole trader' : 'a small team'}, you do
 
 ### Your Responsibilities
 
-1. **Set the standard** â€” Your practices set the culture
-2. **Stay informed** â€” Keep up with AI developments
-3. **Maintain documentation** â€” Keep records of AI decisions
-4. **Review regularly** â€” Check your practices against policy
-5. **Seek help when needed** â€” Professional bodies, industry associations
+1. **Set the standard** — Your practices set the culture
+2. **Stay informed** — Keep up with AI developments
+3. **Maintain documentation** — Keep records of AI decisions
+4. **Review regularly** — Check your practices against policy
+5. **Seek help when needed** — Professional bodies, industry associations
 
 ### Key Risks to Monitor
 
@@ -2658,10 +2658,10 @@ ${riskProfile.topRisks.slice(0, 4).map(r => `- ${r}`).join('\n')}
 
 ## Resources
 
-- **AI Usage Policy (P01)** â€” Full policy document
-- **Staff One-Pager (S01)** â€” Quick reference for team
-- **Incident Response Plan (I01)** â€” Detailed incident procedures
-- **${getGovernanceRole(businessProfile.size)}** â€” Escalation point
+- **AI Usage Policy (P01)** — Full policy document
+- **Staff One-Pager (S01)** — Quick reference for team
+- **Incident Response Plan (I01)** — Detailed incident procedures
+- **${getGovernanceRole(businessProfile.size)}** — Escalation point
 
 ---
 
@@ -2763,7 +2763,7 @@ Signature: _________________________ Date: _____________
 |-------|---------|
 | Received by | |
 | Date filed | |
-| Training completed | â˜ Yes â˜ Pending |
+| Training completed | ☐ Yes ☐ Pending |
 | Next review date | |
 | Notes | |
 
@@ -2808,12 +2808,12 @@ Before detailed assessment, confirm basic eligibility:
 
 | Criterion | Requirement | Pass? |
 |-----------|-------------|-------|
-| Legitimate provider | Identifiable company, clear terms | â˜ |
-| Relevant functionality | Meets our actual needs | â˜ |
-| Acceptable jurisdiction | Data handling in acceptable countries | â˜ |
-| Budget alignment | Within approved budget range | â˜ |
+| Legitimate provider | Identifiable company, clear terms | ☐ |
+| Relevant functionality | Meets our actual needs | ☐ |
+| Acceptable jurisdiction | Data handling in acceptable countries | ☐ |
+| Budget alignment | Within approved budget range | ☐ |
 
-**If any "No" â†’ Stop assessment. Tool not suitable.**
+**If any "No" → Stop assessment. Tool not suitable.**
 
 ### Step 2: Detailed Assessment
 
@@ -2841,10 +2841,10 @@ Complete the assessment sections below.
 
 | Question | Answer | Notes |
 |----------|--------|-------|
-| Is input data used for model training? | â˜ Yes â˜ No â˜ Opt-out available | |
-| Can training opt-out be verified? | â˜ Yes â˜ No â˜ N/A | |
+| Is input data used for model training? | ☐ Yes ☐ No ☐ Opt-out available | |
+| Can training opt-out be verified? | ☐ Yes ☐ No ☐ N/A | |
 | How long is input data retained? | | |
-| Can we delete our data? | â˜ Yes â˜ No â˜ Partial | |
+| Can we delete our data? | ☐ Yes ☐ No ☐ Partial | |
 | What's the deletion process/timeframe? | | |
 
 ### B2: Data Storage and Security
@@ -2852,19 +2852,19 @@ Complete the assessment sections below.
 | Question | Answer | Notes |
 |----------|--------|-------|
 | Where is data stored? (Countries) | | |
-| Is data encrypted at rest? | â˜ Yes â˜ No â˜ Unknown | |
-| Is data encrypted in transit? | â˜ Yes â˜ No â˜ Unknown | |
-| What security certifications? | â˜ SOC 2 â˜ ISO 27001 â˜ Other: | |
-| Access controls in place? | â˜ Yes â˜ No â˜ Unknown | |
+| Is data encrypted at rest? | ☐ Yes ☐ No ☐ Unknown | |
+| Is data encrypted in transit? | ☐ Yes ☐ No ☐ Unknown | |
+| What security certifications? | ☐ SOC 2 ☐ ISO 27001 ☐ Other: | |
+| Access controls in place? | ☐ Yes ☐ No ☐ Unknown | |
 
 ### B3: Third-Party Sharing
 
 | Question | Answer | Notes |
 |----------|--------|-------|
-| Is data shared with third parties? | â˜ Yes â˜ No â˜ Unknown | |
+| Is data shared with third parties? | ☐ Yes ☐ No ☐ Unknown | |
 | Who are the third parties? | | |
 | For what purposes? | | |
-| Can we opt out of sharing? | â˜ Yes â˜ No â˜ N/A | |
+| Can we opt out of sharing? | ☐ Yes ☐ No ☐ N/A | |
 
 ---
 
@@ -2874,17 +2874,17 @@ Complete the assessment sections below.
 
 | Requirement | Met? | Evidence |
 |-------------|------|----------|
-| GDPR compliance (if applicable) | â˜ Yes â˜ No â˜ N/A | |
-| Australian Privacy Principles alignment | â˜ Yes â˜ No â˜ Unknown | |
-| Data Processing Agreement available | â˜ Yes â˜ No | |
-| Breach notification commitment | â˜ Yes â˜ No â˜ Unknown | |
+| GDPR compliance (if applicable) | ☐ Yes ☐ No ☐ N/A | |
+| Australian Privacy Principles alignment | ☐ Yes ☐ No ☐ Unknown | |
+| Data Processing Agreement available | ☐ Yes ☐ No | |
+| Breach notification commitment | ☐ Yes ☐ No ☐ Unknown | |
 
 ### C2: Industry-Specific Requirements
 
-${regulatoryContext.applicableRegulations.map(r => `| ${r.name} requirements | â˜ Yes â˜ No â˜ N/A â˜ Unknown | |`).join('\n')}
+${regulatoryContext.applicableRegulations.map(r => `| ${r.name} requirements | ☐ Yes ☐ No ☐ N/A ☐ Unknown | |`).join('\n')}
 
-${dataContext.dataTypes.includes('health') ? '| Healthcare data handling (if applicable) | â˜ Yes â˜ No â˜ N/A | |' : ''}
-${dataContext.dataTypes.includes('financial') ? '| Financial data handling (if applicable) | â˜ Yes â˜ No â˜ N/A | |' : ''}
+${dataContext.dataTypes.includes('health') ? '| Healthcare data handling (if applicable) | ☐ Yes ☐ No ☐ N/A | |' : ''}
+${dataContext.dataTypes.includes('financial') ? '| Financial data handling (if applicable) | ☐ Yes ☐ No ☐ N/A | |' : ''}
 
 ---
 
@@ -2896,16 +2896,16 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling (if a
 |--------|------------|-------|
 | Uptime commitment/SLA | | |
 | Support availability | | |
-| Support channels | â˜ Email â˜ Chat â˜ Phone â˜ Portal | |
+| Support channels | ☐ Email ☐ Chat ☐ Phone ☐ Portal | |
 | Response time commitment | | |
-| Documentation quality | â˜ Good â˜ Adequate â˜ Poor | |
+| Documentation quality | ☐ Good ☐ Adequate ☐ Poor | |
 
 ### D2: Business Viability
 
 | Factor | Assessment | Notes |
 |--------|------------|-------|
-| Company financial stability | â˜ Stable â˜ Unknown â˜ Concerns | |
-| Market position | â˜ Leader â˜ Established â˜ Emerging | |
+| Company financial stability | ☐ Stable ☐ Unknown ☐ Concerns | |
+| Market position | ☐ Leader ☐ Established ☐ Emerging | |
 | Customer base | | |
 | Recent news/concerns | | |
 
@@ -2924,7 +2924,7 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling (if a
 
 | Item | Details |
 |------|---------|
-| Pricing model | â˜ Free â˜ Per user â˜ Usage-based â˜ Enterprise |
+| Pricing model | ☐ Free ☐ Per user ☐ Usage-based ☐ Enterprise |
 | Monthly/annual cost | |
 | Implementation costs | |
 | Training costs | |
@@ -2939,16 +2939,16 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling (if a
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| | â˜ L â˜ M â˜ H | â˜ L â˜ M â˜ H | |
-| | â˜ L â˜ M â˜ H | â˜ L â˜ M â˜ H | |
-| | â˜ L â˜ M â˜ H | â˜ L â˜ M â˜ H | |
+| | ☐ L ☐ M ☐ H | ☐ L ☐ M ☐ H | |
+| | ☐ L ☐ M ☐ H | ☐ L ☐ M ☐ H | |
+| | ☐ L ☐ M ☐ H | ☐ L ☐ M ☐ H | |
 
 ### Overall Risk Rating
 
-â˜ **Low Risk** â€” Proceed with standard controls
-â˜ **Medium Risk** â€” Proceed with enhanced controls
-â˜ **High Risk** â€” Proceed only if essential, with strict controls
-â˜ **Unacceptable** â€” Do not proceed
+☐ **Low Risk** — Proceed with standard controls
+☐ **Medium Risk** — Proceed with enhanced controls
+☐ **High Risk** — Proceed only if essential, with strict controls
+☐ **Unacceptable** — Do not proceed
 
 ---
 
@@ -2967,10 +2967,10 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling (if a
 
 ### Recommendation
 
-â˜ **Approve** â€” Suitable for use with standard controls
-â˜ **Approve with conditions** â€” Suitable with specific restrictions
-â˜ **Further review needed** â€” Requires additional information
-â˜ **Not recommended** â€” Does not meet requirements
+☐ **Approve** — Suitable for use with standard controls
+☐ **Approve with conditions** — Suitable with specific restrictions
+☐ **Further review needed** — Requires additional information
+☐ **Not recommended** — Does not meet requirements
 
 ### Conditions/Restrictions (if applicable)
 
@@ -3039,7 +3039,7 @@ ${aiContext.tools.length > 0 ? aiContext.tools.map((t, i) => `
 | **Category** | [Chat/Image/Transcription/etc.] |
 | **Approval Date** | [Date] |
 | **Review Due** | [Date] |
-| **Risk Level** | â˜ Low â˜ Medium â˜ High |
+| **Risk Level** | ☐ Low ☐ Medium ☐ High |
 | **Assessment ID** | [Reference to assessment] |
 
 **Permitted Uses:**
@@ -3074,7 +3074,7 @@ Use the Vendor Assessment Framework (V01) to evaluate and approve AI vendors.
 | **Category** | |
 | **Approval Date** | |
 | **Review Due** | |
-| **Risk Level** | â˜ Low â˜ Medium â˜ High |
+| **Risk Level** | ☐ Low ☐ Medium ☐ High |
 | **Assessment ID** | |
 
 **Permitted Uses:**
@@ -3095,8 +3095,8 @@ Use the Vendor Assessment Framework (V01) to evaluate and approve AI vendors.
 
 | Vendor | Product | Requested By | Date Requested | Status |
 |--------|---------|--------------|----------------|--------|
-| | | | | â˜ Under review |
-| | | | | â˜ Under review |
+| | | | | ☐ Under review |
+| | | | | ☐ Under review |
 
 ---
 
@@ -3166,35 +3166,35 @@ Use this checklist when reviewing contracts or terms of service for AI vendors. 
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| We retain ownership of input data | â˜ Yes â˜ No â˜ Unclear | | |
-| We retain ownership of output data | â˜ Yes â˜ No â˜ Unclear | | |
-| No claim to our intellectual property | â˜ Yes â˜ No â˜ Unclear | | |
+| We retain ownership of input data | ☐ Yes ☐ No ☐ Unclear | | |
+| We retain ownership of output data | ☐ Yes ☐ No ☐ Unclear | | |
+| No claim to our intellectual property | ☐ Yes ☐ No ☐ Unclear | | |
 
 ### 1.2 Data Use Restrictions
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Training opt-out available | â˜ Yes â˜ No â˜ N/A | | |
-| Data not shared with third parties | â˜ Yes â˜ No â˜ Limited | | |
-| Data not used for marketing | â˜ Yes â˜ No â˜ Unclear | | |
+| Training opt-out available | ☐ Yes ☐ No ☐ N/A | | |
+| Data not shared with third parties | ☐ Yes ☐ No ☐ Limited | | |
+| Data not used for marketing | ☐ Yes ☐ No ☐ Unclear | | |
 
 ### 1.3 Data Security
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Encryption in transit | â˜ Yes â˜ No â˜ Unclear | | |
-| Encryption at rest | â˜ Yes â˜ No â˜ Unclear | | |
-| Access controls specified | â˜ Yes â˜ No â˜ Unclear | | |
-| Security certifications referenced | â˜ Yes â˜ No | | |
+| Encryption in transit | ☐ Yes ☐ No ☐ Unclear | | |
+| Encryption at rest | ☐ Yes ☐ No ☐ Unclear | | |
+| Access controls specified | ☐ Yes ☐ No ☐ Unclear | | |
+| Security certifications referenced | ☐ Yes ☐ No | | |
 
 ### 1.4 Data Deletion
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Deletion upon request | â˜ Yes â˜ No â˜ Limited | | |
-| Deletion upon termination | â˜ Yes â˜ No â˜ Limited | | |
-| Deletion timeframe specified | â˜ Yes â˜ No | | |
-| Deletion verification available | â˜ Yes â˜ No | | |
+| Deletion upon request | ☐ Yes ☐ No ☐ Limited | | |
+| Deletion upon termination | ☐ Yes ☐ No ☐ Limited | | |
+| Deletion timeframe specified | ☐ Yes ☐ No | | |
+| Deletion verification available | ☐ Yes ☐ No | | |
 
 ---
 
@@ -3204,27 +3204,27 @@ Use this checklist when reviewing contracts or terms of service for AI vendors. 
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Privacy law compliance commitment | â˜ Yes â˜ No â˜ Unclear | | |
-| Australian Privacy Principles | â˜ Yes â˜ No â˜ N/A | | |
-| GDPR compliance (if relevant) | â˜ Yes â˜ No â˜ N/A | | |
-| Data Processing Agreement available | â˜ Yes â˜ No â˜ Included | | |
+| Privacy law compliance commitment | ☐ Yes ☐ No ☐ Unclear | | |
+| Australian Privacy Principles | ☐ Yes ☐ No ☐ N/A | | |
+| GDPR compliance (if relevant) | ☐ Yes ☐ No ☐ N/A | | |
+| Data Processing Agreement available | ☐ Yes ☐ No ☐ Included | | |
 
 ### 2.2 Breach Notification
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Breach notification commitment | â˜ Yes â˜ No â˜ Unclear | | |
-| Notification timeframe specified | â˜ Yes â˜ No | | |
-| Cooperation in breach response | â˜ Yes â˜ No â˜ Unclear | | |
+| Breach notification commitment | ☐ Yes ☐ No ☐ Unclear | | |
+| Notification timeframe specified | ☐ Yes ☐ No | | |
+| Cooperation in breach response | ☐ Yes ☐ No ☐ Unclear | | |
 
 ${regulatoryContext.level === 'heavy' || regulatoryContext.level === 'professional' ? `
 ### 2.3 Industry-Specific Requirements
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-${regulatoryContext.applicableRegulations.map(r => `| ${r.name} compliance | â˜ Yes â˜ No â˜ N/A | | |`).join('\n')}
-${dataContext.dataTypes.includes('health') ? '| Health data handling terms | â˜ Yes â˜ No â˜ N/A | | |' : ''}
-${dataContext.dataTypes.includes('financial') ? '| Financial data handling terms | â˜ Yes â˜ No â˜ N/A | | |' : ''}
+${regulatoryContext.applicableRegulations.map(r => `| ${r.name} compliance | ☐ Yes ☐ No ☐ N/A | | |`).join('\n')}
+${dataContext.dataTypes.includes('health') ? '| Health data handling terms | ☐ Yes ☐ No ☐ N/A | | |' : ''}
+${dataContext.dataTypes.includes('financial') ? '| Financial data handling terms | ☐ Yes ☐ No ☐ N/A | | |' : ''}
 ` : ''}
 
 ---
@@ -3235,18 +3235,18 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling terms
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Uptime commitment/SLA | â˜ Yes â˜ No | | |
-| Support availability | â˜ Yes â˜ No | | |
-| Response time commitments | â˜ Yes â˜ No | | |
-| Remedies for SLA breaches | â˜ Yes â˜ No | | |
+| Uptime commitment/SLA | ☐ Yes ☐ No | | |
+| Support availability | ☐ Yes ☐ No | | |
+| Response time commitments | ☐ Yes ☐ No | | |
+| Remedies for SLA breaches | ☐ Yes ☐ No | | |
 
 ### 3.2 Changes and Updates
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Notice of material changes | â˜ Yes â˜ No â˜ Unclear | | |
-| Right to terminate if terms change | â˜ Yes â˜ No â˜ Limited | | |
-| Version control of terms | â˜ Yes â˜ No | | |
+| Notice of material changes | ☐ Yes ☐ No ☐ Unclear | | |
+| Right to terminate if terms change | ☐ Yes ☐ No ☐ Limited | | |
+| Version control of terms | ☐ Yes ☐ No | | |
 
 ---
 
@@ -3256,18 +3256,18 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling terms
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Pricing clearly stated | â˜ Yes â˜ No | | |
-| Price increase provisions | â˜ Yes â˜ No â˜ N/A | | |
-| Payment terms acceptable | â˜ Yes â˜ No | | |
+| Pricing clearly stated | ☐ Yes ☐ No | | |
+| Price increase provisions | ☐ Yes ☐ No ☐ N/A | | |
+| Payment terms acceptable | ☐ Yes ☐ No | | |
 
 ### 4.2 Term and Termination
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Contract term specified | â˜ Yes â˜ No | | |
-| Termination for convenience | â˜ Yes â˜ No â˜ Limited | | |
-| Termination for breach | â˜ Yes â˜ No | | |
-| Post-termination obligations | â˜ Yes â˜ No | | |
+| Contract term specified | ☐ Yes ☐ No | | |
+| Termination for convenience | ☐ Yes ☐ No ☐ Limited | | |
+| Termination for breach | ☐ Yes ☐ No | | |
+| Post-termination obligations | ☐ Yes ☐ No | | |
 
 ---
 
@@ -3277,17 +3277,17 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling terms
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Liability cap reasonable | â˜ Yes â˜ No â˜ None | | |
-| Carve-outs for data breaches | â˜ Yes â˜ No | | |
-| Mutual limitation | â˜ Yes â˜ No | | |
+| Liability cap reasonable | ☐ Yes ☐ No ☐ None | | |
+| Carve-outs for data breaches | ☐ Yes ☐ No | | |
+| Mutual limitation | ☐ Yes ☐ No | | |
 
 ### 5.2 Indemnification
 
 | Requirement | Present? | Location in Contract | Notes |
 |-------------|----------|---------------------|-------|
-| Vendor indemnifies for breaches | â˜ Yes â˜ No â˜ Limited | | |
-| IP indemnification | â˜ Yes â˜ No | | |
-| Reasonable scope | â˜ Yes â˜ No | | |
+| Vendor indemnifies for breaches | ☐ Yes ☐ No ☐ Limited | | |
+| IP indemnification | ☐ Yes ☐ No | | |
+| Reasonable scope | ☐ Yes ☐ No | | |
 
 ---
 
@@ -3303,8 +3303,8 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling terms
 
 | Clause | Concern | Acceptable? |
 |--------|---------|-------------|
-| | | â˜ Yes â˜ No |
-| | | â˜ Yes â˜ No |
+| | | ☐ Yes ☐ No |
+| | | ☐ Yes ☐ No |
 
 ### Negotiation Points
 
@@ -3317,9 +3317,9 @@ ${dataContext.dataTypes.includes('financial') ? '| Financial data handling terms
 
 ## Recommendation
 
-â˜ **Approve** â€” Contract terms acceptable
-â˜ **Approve with modifications** â€” Negotiate changes listed above
-â˜ **Reject** â€” Contract terms unacceptable
+☐ **Approve** — Contract terms acceptable
+☐ **Approve with modifications** — Negotiate changes listed above
+☐ **Reject** — Contract terms unacceptable
 
 **Reason:**
 
@@ -3376,15 +3376,15 @@ ${aiContext.tools.length > 0 ? aiContext.tools.map(t => `
 
 | Date | Issue | Severity | Resolution |
 |------|-------|----------|------------|
-| | | â˜ Low â˜ Med â˜ High | |
-| | | â˜ Low â˜ Med â˜ High | |
+| | | ☐ Low ☐ Med ☐ High | |
+| | | ☐ Low ☐ Med ☐ High | |
 
 #### Performance Notes
 
 | Date | Observation | Follow-up Needed? |
 |------|-------------|-------------------|
-| | | â˜ Yes â˜ No |
-| | | â˜ Yes â˜ No |
+| | | ☐ Yes ☐ No |
+| | | ☐ Yes ☐ No |
 
 #### News/Updates Tracked
 
@@ -3411,13 +3411,13 @@ Add vendors as they are approved.
 
 | Date | Issue | Severity | Resolution |
 |------|-------|----------|------------|
-| | | â˜ Low â˜ Med â˜ High | |
+| | | ☐ Low ☐ Med ☐ High | |
 
 **Performance Notes**
 
 | Date | Observation | Follow-up Needed? |
 |------|-------------|-------------------|
-| | | â˜ Yes â˜ No |
+| | | ☐ Yes ☐ No |
 `}
 
 ---
@@ -3462,10 +3462,10 @@ ${aiContext.tools.map(t => `| ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toU
 
 | Source | URL/Contact | Subscribed? |
 |--------|-------------|-------------|
-| Vendor status page | | â˜ Yes â˜ No |
-| Vendor blog/updates | | â˜ Yes â˜ No |
-| Industry news | | â˜ Yes â˜ No |
-| Security alerts | | â˜ Yes â˜ No |
+| Vendor status page | | ☐ Yes ☐ No |
+| Vendor blog/updates | | ☐ Yes ☐ No |
+| Industry news | | ☐ Yes ☐ No |
+| Security alerts | | ☐ Yes ☐ No |
 
 ---
 
@@ -3475,7 +3475,7 @@ ${aiContext.tools.map(t => `| ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toU
 
 | Vendor | Changes Noted | Issues | Action Required |
 |--------|---------------|--------|-----------------|
-${aiContext.tools.map(t => `| ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())} | â˜ Yes â˜ No | â˜ Yes â˜ No | â˜ Yes â˜ No |`).join('\n')}
+${aiContext.tools.map(t => `| ${t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())} | ☐ Yes ☐ No | ☐ Yes ☐ No | ☐ Yes ☐ No |`).join('\n')}
 
 **Summary of Key Events:**
 
@@ -3512,7 +3512,7 @@ This governance pack contains **32 documents** tailored to your business:
 - Located in **${businessProfile.state.toUpperCase()}**
 - Risk profile: **${riskProfile.riskLevel}** (${riskProfile.overallScore}/100)
 
-### 📁 01_Policies (5 documents)
+### 01_Policies (5 documents)
 Core AI policies for your organization.
 - P01 - AI Usage Policy
 - P02 - Data Handling Policy
@@ -3520,14 +3520,14 @@ Core AI policies for your organization.
 - P04 - Ethics Guidelines
 - P05 - Acceptable Use Standards
 
-### 📁 02_Risk_Assessment (4 documents)
+### 02_Risk_Assessment (4 documents)
 Your risk profile and management tools.
 - R01 - Risk Intelligence Report
 - R02 - Risk Register
 - R03 - Compliance Checklist
 - R04 - Data Flow Mapping
 
-### 📁 03_Staff_Materials (5 documents)
+### 03_Staff_Materials (5 documents)
 Training and reference materials for your team.
 - S01 - Staff One-Pager
 - S02 - AI Awareness Training
@@ -3535,28 +3535,28 @@ Training and reference materials for your team.
 - S04 - Manager Briefing
 - S05 - Policy Acknowledgment Form
 
-### 📁 04_Vendor_Management (4 documents)
+### 04_Vendor_Management (4 documents)
 Tools for evaluating and managing AI vendors.
 - V01 - Vendor Assessment Framework
 - V02 - Approved Vendor Register
 - V03 - Contract Checklist
 - V04 - Vendor Monitoring Log
 
-### 📁 05_Incident_Response (4 documents)
+### 05_Incident_Response (4 documents)
 Templates for handling AI-related incidents.
 - I01 - Incident Response Plan
 - I02 - Incident Report Form
 - I03 - Incident Log
 - I04 - Communication Templates
 
-### 📁 06_AI_Literacy (4 documents)
+### 06_AI_Literacy (4 documents)
 Educational materials to help understand AI.
 - L01 - AI Literacy Fundamentals
 - L02 - Prompt Writing Guide
 - L03 - AI Tool Comparison
 - L04 - AI Verification Checklist
 
-### 📁 07_Planning (6 documents)
+### 07_Planning (6 documents)
 Implementation planning and tracking tools.
 - PL01 - 12-Month AI Roadmap
 - PL02 - Implementation Checklist
