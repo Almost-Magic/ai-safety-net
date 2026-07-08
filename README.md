@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# AI Safety Net
 
-## Project info
+AI Safety Net is a local-first checklist tool for small teams that are starting to use AI at work and want a plain-language way to spot obvious risks.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+It helps a user:
 
-## How can I edit this code?
+- answer a short set of practical questions;
+- see a simple risk summary;
+- export or save a working action list;
+- discuss AI use with a manager, board, client, or team without jargon.
 
-There are several ways of editing your application.
+## What this is
 
-**Use Lovable**
+This is a readiness and reflection tool. It is not legal advice, compliance certification, security assurance, medical advice, therapy, crisis care, or an emergency service.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+The tool is designed to help people ask better questions before adopting AI. It cannot prove that an AI system is safe, lawful, private, fair, or secure.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Who it helps
 
-**Use your preferred IDE**
+- founders and operators who need a first AI risk conversation;
+- community organisations that need a simple checklist;
+- small teams without a dedicated AI governance function;
+- contributors who want a small open-source tool to improve.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## What you can do now
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Start the assessment.
+2. Answer what you know and skip what you do not.
+3. Review the generated risk notes.
+4. Save or export the result for a human review conversation.
 
-Follow these steps:
+## Safety boundaries
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Do not paste secrets, credentials, private client data, medical information, or legal documents into the tool.
+- Treat the output as a draft checklist, not a decision.
+- Ask a qualified professional for legal, privacy, cybersecurity, medical, financial, or compliance advice.
+- If an AI system may affect safety, health, housing, employment, finance, education, legal rights, or access to essential services, get specialist review before deployment.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Run locally
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open the local URL shown by Vite, usually `http://localhost:5173`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Checks
 
-**Use GitHub Codespaces**
+```bash
+npm test
+npm run lint
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Public demo
 
-## What technologies are used for this project?
+Public GitHub Pages evidence was checked unauthenticated on 2026-07-04:
 
-This project is built with:
+- `https://almost-magic.github.io/ai-safety-net/`
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This confirms a reachable page, not release readiness. Review the current build, README, licence, safety wording, and issue list before any public release claim.
 
-## How can I deploy this project?
+## Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Good first issues:
 
-## Can I connect a custom domain to my Lovable project?
+- add examples for a small charity, school, clinic, or local business;
+- improve export wording so a stranger can understand the result in 60 seconds;
+- add tests for risk scoring and skipped answers;
+- add accessibility checks for keyboard and mobile use;
+- add a short threat model for data entered into the browser.
 
-Yes, you can!
+## Licence
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT. See [LICENSE](LICENSE).

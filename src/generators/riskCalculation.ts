@@ -23,7 +23,7 @@ export function calculateRiskProfile(answers: UserAnswers): RiskProfile {
   const industry = getIndustryProfile(answers.industry);
   
   // Base scores
-  let scores = {
+  const scores = {
     dataPrivacy: 50,
     compliance: 50,
     operational: 50,

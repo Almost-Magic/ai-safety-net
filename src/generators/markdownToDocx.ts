@@ -39,6 +39,12 @@ interface DocxOptions {
   accentColor?: string;
 }
 
+type TextRunWithOptions = TextRun & {
+  options?: {
+    text?: string;
+  };
+};
+
 // ============================================================================
 // MARKDOWN PARSER
 // ============================================================================
@@ -309,7 +315,7 @@ function buildTable(rows: string[][], accentColor: string): Table {
                 // Make header row bold and white
                 if (rowIndex === 0) {
                   return new TextRun({
-                    text: (run as any).options?.text || '',
+                    text: (run as TextRunWithOptions).options?.text || '',
                     bold: true,
                     size: 20,
                     font: 'Calibri',
@@ -346,7 +352,7 @@ export async function markdownToDocxBlob(
   let numberRef = 0;
 
   // Build numbered list configs dynamically
-  const numberingConfigs: any[] = [];
+  const numberingConfigs: Parameters<typeof Document>[0]['numbering']['config'] = [];
 
   for (const block of blocks) {
     switch (block.type) {
@@ -493,7 +499,7 @@ export async function markdownToDocxBlob(
           },
           children: parseInlineFormatting(block.content).map(run => {
             return new TextRun({
-              text: (run as any).options?.text || '',
+              text: (run as TextRunWithOptions).options?.text || '',
               italics: true,
               size: 22,
               font: 'Calibri',
